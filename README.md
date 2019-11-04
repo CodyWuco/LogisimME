@@ -263,7 +263,7 @@ Lights
 Wires
 -   Connects sources to inputs
 
-## New Features:
+# New Features:
 
 #### Nested Circuit
 
