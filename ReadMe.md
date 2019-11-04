@@ -1,19 +1,43 @@
 # **VISION**
-## To create a user-friendly Logic Simulator app, where the user can create basic logic circuits 
-## and get immediate feedback. Easy to use and as simple as it could be yet professional at the
-## same time. Perfect for beginners.
+## To create a user-friendly Logic Simulator app, where the user can create basic logic circuits and get immediate feedback.
+## Easy to use and as simple as it could be yet professional at the same time. Perfect for beginners.
 
 # **MISSION**
 ## To help users understand how logic circuits work. A simple app for beginners.
 
-# **Team Members:**
+# **TEAM MEMBERS:**
       * Cody Wuco
       * Makenna Benson
       * Joshua Olson
       * Mehakdeep Singh
 
+##**NEW FEATURES:**
+###    * _Nested Circuit_
+             * LED base tree circuit (Circuit should save from the LED, and read down similarly to Eval() function.
+             * Save switches or Null inputs as input for new circuit, and LEDs as output
+             * Naming sace for easy lookup
+             * preset schematic (being able to design and save schematics to use in future designs).
+        * _Better Grid and Buttons_
+             * Grid needs to be unchanging when the phone’s orientation changes and should be larger than the screen (at least squared off) 
+             * We need buttons on a U.I. layer, so we can still press buttons when the grid view is moved around.
+                  * Currently buttons are hard coded on the grid, and you are unable to see or press them if you move the grid view around.
+        * _Toggle move grid view_
+             * Currently the grid registers touches on the screen as trying to touch a grid cell.
+             * We need to create a way to touch the screen to drag the grid view around.
+                  * This can be done with arrow buttons on the U.I. layer or a toggle button for drag and drop grid view modes.
+        * _User feedback for screen touches_ 
+             * beeps/vibrations (different type/sounds)
+                  * pressing a button
+                  * Overlapping objects
+                  * Outputs
+        * _Better Wire:_ 
+              * Glowing wires that display what signal a gate is outputting
+              * Fix wire draw to be more user friendly
+              * Delete wire when source is deleted
+              * Maybe wiring revamp
 
-## Design
+
+## **DESIGN**
 ### Grid
 * Will hold icons.
 * grid will start out populated with empty grid cells and be populated by the user by using the Hud controls.
@@ -94,4 +118,78 @@ click to select, then click logic node to select source.
 	* Create save state of current grid.
 * Else
 	* Load selected grid save state.
+###**Screen objects:**
+####Grid:
+      * A basic graph like grid
+      * Snap to grid would allow for greater control and predictability.
+      * Grid is composed of Cells
+####Size:
+      * ~10 gates should fit comfortable (Recommended approach)
+      * Sets icon sizes
+      * Should be only 1 screen in size
+####Cells:
+      * Each cell keeps track of its position on the grid
+      * Each cell draws itself
+####Hud:
+      * Task bar:
+          * Controls Icons(Cells):
+               * Clear Screen Icon
+                     * Delete all logic nodes and reset grid
+                     * Need to click 2 time to activate
+               * Delete Icon
+                     * Click to choose Delete Mode
+               * Wire Icons
+                     * Click for Wire Mode
+               * Create Save Icon
+                     * Click for Create Save Mode
+               * Saves Icon
+                     * Clicked to create and load saves
+               * Logic Selection Icons:
+                     * Drops a logic cell when clicking an empty grid cell after selecting this
+#### Wire Icons:
+####   * Wire Source
+           * Selects the source for the connection
+####   * Wire Input
+           * Selects the input for the connection
+####   * Cut Wire
+           * Removes the input connections from a node.
+#### Logic Icons:
+####   * Each node draws its own wire
+       * Each node keeps track of its source
+       * Each node Evaluates its own state
+       * Click one to select place logic mode
+#### Logic Gate Icons:
+####   * AND gate icon
+           * In this mode clicking an empty cell will replace it with an And Gate
+       * OR gate icon
+z          * In this mode clicking an empty cell will replace it with an Or Gate
+       * NOT gate icon
+           * In this mode clicking an empty cell will replace it with an Not Gate
+       * Switch icon
+           * In this mode clicking an empty cell will replace it with an Switch Gate
+       * Light icon
+           * In this mode clicking an empty cell will replace it with an Light Gate
+#### Logic Cells (Cells):
+####   * Gates:
+           * Not gate
+               * Invert input into opposite input.
+               * 1 input 1 output
+           * AND gate
+               * Only outputs out an “on” signal if both inputs are “on”.
+               * 2 inputs 1 output
+           * OR gate
+               * Outputs out an “on” signal if either input is “on”.
+               * 2 inputs 1 output.
+        * Inputs/Outputs:
+               * On/off switch
+                   * Tap to switch output to “on” or “off”’.
+                   * Outputs constant signal depending on state.
+                   * Should have an obvious visual difference between states.
+        * Lights
+                   * Turns on (glows) when receiving an “on” input
+        * Connectors:
+               * Wires
+                   * Connects sources to inputs
+
+
 
