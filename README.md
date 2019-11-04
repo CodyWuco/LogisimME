@@ -1,5 +1,13 @@
 # **TEAM NAME**
 ### MythicEncrytion
+
+
+# **Team Members:**
+  * Cody Wuco
+  * Makenna Benson
+  * Joshua Olson
+  * Mehakdeep Singh
+
 # **VISION**
 To create a user-friendly Logic Simulator app, where the user can create basic logic circuits and get immediate feedback. Easy to use and as simple as it could be yet professional at the same time. Perfect for beginners.
 
@@ -299,9 +307,3 @@ Wires
 -   Delete wire when source is deleted
 -   Maybe wiring revamp
 
-
-# **Team Members:**
-  * Cody Wuco
-  * Makenna Benson
-  * Joshua Olson
-  * Mehakdeep Singh
