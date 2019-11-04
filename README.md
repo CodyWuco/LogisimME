@@ -1,5 +1,5 @@
 # **TEAM NAME**
-## MythicEncrytion
+### MythicEncrytion
 # **VISION**
 To create a user-friendly Logic Simulator app, where the user can create basic logic circuits and get immediate feedback. Easy to use and as simple as it could be yet professional at the same time. Perfect for beginners.
 
