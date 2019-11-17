@@ -2,10 +2,15 @@ package com.gamecodeschool.logicsimulator;
 
 
 import java.util.List;
+import java.util.Vector;
 
 public class NestedCircuitLogic {
+    // head is used to find the output and to keep track of the starting point of the circuit
     LogicNode head;
+    // this list is used to save and load the tree without excessive logic
     List<LightNode> tree;
+    // this vector is used to keep track of the open input slots
+    Vector<LogicNode> inputs;
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // This takes in a save name and loads the correct circuit
