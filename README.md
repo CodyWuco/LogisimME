@@ -368,7 +368,14 @@ Trees should save their logic as logic node objects
 	    -   Overlapping objects
 	    -   Outputs
     
-
+-	Progress
+	-	We are going to use the android studio buttons so that they create a seperate UI layer.
+		-	We have implement a xml code and images need for both the gates and the buttons associated with the gates.
+		-	We may add images related to things like save and delete but for now we will leave them as taxt.
+		-	Currently we are using a constrain layout with all the buttons on one side. As we add more buttons to the xml we will have to change the layout and button size.
+			-	One option is to use dynamic constains wich should allow buutons to move around the screen as we filp the phone on it's side.
+	
+	-	Draw the images on the gates themselves we will use the method outlined in chapter 13 of the PACKT book.
 #### Better Wire:
 
 -   Glowing wires that display what signal a gate is outputting
@@ -376,4 +383,6 @@ Trees should save their logic as logic node objects
 -   Delete wire when source is deleted
 -   Maybe wiring revamp
 
-
+-	Progress
+	-	making a class (line.java) for the wires so they are it's own object rather then just a repersentation on the screen.
+		-	This would allow the wires to be bent at right angles and would handle the logic for connecting ogjects seen on screen.
