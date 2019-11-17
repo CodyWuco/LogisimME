@@ -36,6 +36,7 @@ abstract class AbstractGridCell implements Serializable {
     }
 
     void fillRect(Canvas canvas, Paint paint, int fillColor, int size){
+        paint.setStrokeWidth(1);
         paint.setColor(fillColor);
         canvas.drawRect(x, y, x + w*size, y + h*size, paint );
     }

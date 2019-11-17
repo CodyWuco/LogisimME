@@ -33,7 +33,6 @@ abstract class LogicNode extends AbstractGridCell{
                 input.getY() + input.getH() * 1/ 2,
                 this.getX() + this.getW() * 1/4,
                 this.getY() + this.getH()* 1/2, paint);
-        paint.setStrokeWidth(1);
 
     }
 }
@@ -114,7 +113,6 @@ class AndNode extends LogicNode{
         canvas.drawLine(getX() + getW()*5/6,getY() +getH()/2,getX() + getW(),getY()+getH()/2,paint);
         canvas.drawLine(getX(),getY() +getH()/3,getX() + getW()*1/6,getY()+getH()/3,paint);
         canvas.drawLine(getX(),getY() +getH()*2/3,getX() + getW()*1/6,getY()+getH()*2/3,paint);
-        paint.setStrokeWidth(1);
     }
 }
 
@@ -149,7 +147,6 @@ class OrNode extends LogicNode{
 
 
         paint.setStyle(Paint.Style.FILL);
-        paint.setStrokeWidth(1);
 
     }
 }
