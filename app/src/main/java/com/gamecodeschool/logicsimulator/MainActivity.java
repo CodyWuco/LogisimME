@@ -22,8 +22,6 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 
 
-
-
 /*
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class ClickEvent{
