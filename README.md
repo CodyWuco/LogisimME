@@ -281,6 +281,74 @@ Wires
 -   preset schematic (being able to design and save schematics to use in future designs).
     
 
+### NestedGateNode
+
+-   This creates a node/cell by having a name of a save passed to it on instance creation
+    
+-   The logic gate will be separate and will load up saved logic
+    
+
+	-   This creation will call a visual identifier (maybe an image or name)
+    
+	-   Loads up a logic tree
+    
+	-   It should be able to correctly attach input to its logic
+    
+
+		-   This can be done by keeping input in a list that has each spot in the list assigned to the inputs of the nodes in its logic tree.
+    
+		-   Might need a way to identify which inputs are used for what or a way to keep track of what each input combination does what.
+    
+
+### NestedGateLogic
+
+-   Saved logic will scan through a tree of logic and save a new instance of the tree
+    
+
+-   When the instance is saved it will export a save of the tree to a file
+    
+
+-   The save will then be called by the NestedGate class, which will load the tree as it’s eval logic, and be places as a node on the grid
+    
+
+-   It will save by scanning down a tree of logic ignoring the LEDs and switches and saving everything else as a part of the logic tree.
+    
+
+	-   Use a get node input recursive function
+    
+
+#### Tests
+
+This needs to be able to read through any logic tree and create a copy of that tree for later use
+
+-   Copy needs to be copyable for multiple uses and shouldn’t be lost unless deleted
+    
+
+It should be able to assign inputs to gates that have only half of there inputs assigned in the tree, and It should only cut inputs off that weren’t part of the save instance
+
+-   Might be able to do this by assigning open inputs to a list and only cutting inputs using that list.
+    
+
+This probably shouldn’t allow single node circuits to be save
+
+This should allow for nested circuits to be saved as part of a nested circuit
+
+-   This can be done by calling the tree of the nested circuit when creating the new tree.
+    
+
+-   The tree contained in the nested circuit should act like the tree it was saved from
+    
+
+	-   Meaning that you should be able to read through the tree in the same way that it would be read through if it was base nodes on the grid.
+    
+
+Trees should save their logic as logic node objects
+
+-   This avoid having to write multiple functions
+    
+
+-   This allows the tree to remain generic
+
 #### Better Grid and Buttons:
 
 -   Grid needs to be unchanging when the phone’s orientation changes and should be larger than the screen (at least squared off)
