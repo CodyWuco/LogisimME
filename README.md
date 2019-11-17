@@ -315,6 +315,7 @@ Wires
     
 
 	-   Use a get node input recursive function
+-   getHead returns the head of the logic tree
     
 
 #### Tests

@@ -72,6 +72,8 @@ class Grid implements Serializable {
 
     public void setContext(Context context){this.context = context;}
 
+    //``````````````````````````````````````````````````````````````````````````````````````````````
+    // Save and Load need to be separated into a saves class to be reused in Nested circuit
     public void Save(String fileName) {
         try {
             FileOutputStream fos = context.openFileOutput(fileName, MODE_PRIVATE);
