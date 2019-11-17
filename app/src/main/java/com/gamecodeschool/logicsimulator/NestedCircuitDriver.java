@@ -24,7 +24,7 @@ public class NestedCircuitDriver {
 
         LED1.setInput(and2);
 
-        
+
 
     }
 }
