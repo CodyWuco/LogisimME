@@ -91,18 +91,18 @@ public class MainActivity extends Activity {
 
 
     public boolean onTouchEvent(MotionEvent motionEvent){
-        if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_DOWN) {
+        /*if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_DOWN) {
             wire.midPointInitialComponentX(motionEvent.getX());
             wire.midPointInitialComponentY(motionEvent.getY());
         }
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_MOVE) {
             wire.moveEventX(motionEvent.getX());
             wire.moveEventY(motionEvent.getY());
-        }
+        }*/
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_UP) {
             game.touchGrid(motionEvent.getX(), motionEvent.getY());
-            wire.midPointFinalComponentX(motionEvent.getX());
-            wire.midPointFinalComponentY(motionEvent.getY());
+            //wire.midPointFinalComponentX(motionEvent.getX());
+            //wire.midPointFinalComponentY(motionEvent.getY());
         }
             return true;
     }
