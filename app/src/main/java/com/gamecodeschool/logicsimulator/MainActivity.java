@@ -96,6 +96,8 @@ public class MainActivity extends Activity {
             wire.midPointInitialComponentY(motionEvent.getY());
         }
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_MOVE) {
+            wire.moveEventX(motionEvent.getX());
+            wire.moveEventY(motionEvent.getY());
         }
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_UP) {
             game.touchGrid(motionEvent.getX(), motionEvent.getY());
