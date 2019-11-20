@@ -104,7 +104,7 @@ public class MainActivity extends Activity {
             //wire.midPointFinalComponentX(motionEvent.getX());
             //wire.midPointFinalComponentY(motionEvent.getY());
         }
-            return true;
+        return true;
     }
 
     @Override
