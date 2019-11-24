@@ -58,7 +58,6 @@ class LogicSimulator{
         draw();
     }
 
-    void setGridContext(Context context)    { grid.setContext(context);}
     void Save(String fileName)              { grid.Save(fileName);}
     void Load(String fileName)              { grid.Load(fileName); draw();}
 }
