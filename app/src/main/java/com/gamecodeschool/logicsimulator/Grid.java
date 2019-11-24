@@ -39,7 +39,10 @@ class Grid implements Serializable {
     public Vector<AbstractGridCell> gridCells;
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public Grid(int x, int y){
+    public Grid(int x, int y, Context context){
+        // Forcing context to be set, so there aren't any errors in context related functions, like
+        // saving and loading
+        setContext(context);
 
         if (x > y){ gridSize = 6; }
         else { gridSize = 10; }
