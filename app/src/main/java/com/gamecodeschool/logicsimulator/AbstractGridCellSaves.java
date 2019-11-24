@@ -1,5 +1,7 @@
 package com.gamecodeschool.logicsimulator;
 
+import android.content.Context;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -10,18 +12,21 @@ import java.util.Vector;
 import static android.content.Context.MODE_PRIVATE;
 
 public class AbstractGridCellSaves {
+    Context context;
+    String fileName;
 
-    AbstractGridCellSaves(){
-
+    AbstractGridCellSaves(Context context, String fileName){
+        this.context = context;
+        this.fileName = fileName;
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // Save and Load need to be separated into a saves class to be reused in Nested circuit
-    public void Save(String fileName) {
+    public void Save(Vector Cells) {
         try {
             FileOutputStream fos = context.openFileOutput(fileName, MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(gridCells);
+            oos.writeObject(Cells);
             oos.close();
             fos.close();
         } catch (IOException ioe) {
@@ -29,11 +34,11 @@ public class AbstractGridCellSaves {
         }
     }
 
-    public void Load(String fileName) {
+    public void Load(Vector Cells) {
         try {
             FileInputStream fis = context.openFileInput(fileName);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            gridCells = (Vector<AbstractGridCell>) ois.readObject();
+            Cells = (Vector<AbstractGridCell>) ois.readObject();
             ois.close();
             fis.close();
         } catch (IOException ioe) {
@@ -43,6 +48,5 @@ public class AbstractGridCellSaves {
             c.printStackTrace();
             return;
         }
-        setupGrid();
     }
 }
