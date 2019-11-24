@@ -1,3 +1,5 @@
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// This is the class is used to create a node on the grid using Nested Circuit Logic
 package com.gamecodeschool.logicsimulator;
 
 public class NestedCircuit extends LogicNode{

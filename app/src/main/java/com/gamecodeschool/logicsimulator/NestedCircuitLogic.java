@@ -14,46 +14,63 @@ import java.util.Vector;
 import static android.content.Context.MODE_PRIVATE;
 
 public class NestedCircuitLogic {
-    Context context;
+    private Context context;
     // head is used to find the output and to keep track of the starting point of the circuit
-    LogicNode head;
+    private LogicNode head;
     // this list is used to save and load the tree without excessive logic
-    List<LogicNode> tree;
+    private List<LogicNode> tree;
     // this vector is used to keep track of the open input slots
-    Vector<AbstractGridCell> inputs;
+    private Vector<AbstractGridCell> inputs;
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // This takes in a save name and loads the correct circuit
-    public NestedCircuitLogic(String saveName) {
+    public NestedCircuitLogic(String saveName, LogicNode head) {
+        createCopyFromCircuit(head);
+        // passes in name of the circuit for file storage
         loadLogicCircuit(saveName);
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // This creates a copy of a circuits logic. Then is removes the switches and LED nodes, and
     // creates a vector of the avaibable inputs.
+    private boolean createCopyFromHead(LogicNode head) {
+        // if not LED and not switch create circuit
+        if (head instanceof LightNode) {
+            // passes in the input of the lightnode to be turned into the head of the circuit
+            return createCopyFromHead(head.getA());
+        }
+        else if (head instanceof SwitchNode) {
+            return false;
+        }
+        else {
+            createCopyFromCircuit(head);
+            return true;
+        }
+
+    }
     private boolean createCopyFromCircuit(LogicNode logicNode) {
         // if null add to inputs
         if(logicNode == null){
             return false;
         }
+        if(head == null){ head = tree.get(0);}
 
-        // check if lead is null while continuing traversal
-        CheckAndContinue(logicNode.getA());
+        tree.add(new LightNode(logicNode));
 
-        tree.add(logicNode);
-
-        createCopyFromCircuit(logicNode.getB());
+        checkAndContinue(logicNode.getA());
+        checkAndContinue(logicNode.getB());
 
         return true;
     }
 
-    private void CheckAndContinue(LogicNode logicNode){
+    // check if leaf is null while continuing traversal
+    private void checkAndContinue(LogicNode logicNode){
         if(!createCopyFromCircuit(logicNode.getA())){ setLeafToInput(logicNode);}
     }
 
     private void setLeafToInput(LogicNode logicNode){
         //add empty node to inputs
-        LogicNode temp = new LightNode((new EmptyGridCell(-1,-1,-1,-1)));
+        LogicNode temp = new SwitchNode((new EmptyGridCell(-1,-1,-1,-1)));
         inputs.add(temp);
         //point logic node input A to it
         logicNode.setA(temp);

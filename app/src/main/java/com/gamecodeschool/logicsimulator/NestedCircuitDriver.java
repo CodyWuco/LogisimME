@@ -22,6 +22,8 @@ public class NestedCircuitDriver {
         LED1.setInput(and2);
 
 
+        // copy the circuit into a nested circuit logic
+        NestedCircuitLogic ncl = new NestedCircuitLogic("test Node", and2);
 
     }
 }
