@@ -18,7 +18,7 @@ public class NestedCircuitLogic {
     // head is used to find the output and to keep track of the starting point of the circuit
     LogicNode head;
     // this list is used to save and load the tree without excessive logic
-    List<LightNode> tree;
+    List<LogicNode> tree;
     // this vector is used to keep track of the open input slots
     Vector<AbstractGridCell> inputs;
 
@@ -31,8 +31,32 @@ public class NestedCircuitLogic {
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // This creates a copy of a circuits logic. Then is removes the switches and LED nodes, and
     // creates a vector of the avaibable inputs.
-    private void createCopyFromCircuitHead(LogicNode oldHead) {
+    private boolean createCopyFromCircuit(LogicNode logicNode) {
+        // if null add to inputs
+        if(logicNode == null){
+            return false;
+        }
 
+        // check if lead is null while continuing traversal
+        CheckAndContinue(logicNode.getA());
+
+        tree.add(logicNode);
+
+        createCopyFromCircuit(logicNode.getB());
+
+        return true;
+    }
+
+    private void CheckAndContinue(LogicNode logicNode){
+        if(!createCopyFromCircuit(logicNode.getA())){ setLeafToInput(logicNode);}
+    }
+
+    private void setLeafToInput(LogicNode logicNode){
+        //add empty node to inputs
+        LogicNode temp = new LightNode((new EmptyGridCell(-1,-1,-1,-1)));
+        inputs.add(temp);
+        //point logic node input A to it
+        logicNode.setA(temp);
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
