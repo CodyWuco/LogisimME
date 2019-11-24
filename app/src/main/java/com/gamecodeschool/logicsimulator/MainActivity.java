@@ -79,6 +79,7 @@ public class MainActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setContentView(R.layout.horizontal_layout);
         getScreenRes();
         game = new LogicSimulator(this, size);
         setContentView(game.gameView);
