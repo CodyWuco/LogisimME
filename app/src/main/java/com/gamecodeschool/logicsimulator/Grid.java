@@ -39,7 +39,8 @@ class Grid implements Serializable {
     public Vector<AbstractGridCell> gridCells;
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public Grid(int x, int y){
+    public Grid(int x, int y, Context context){
+        this.context = context;
         saves = new AbstractGridCellSaves(context);
 
         if (x > y){ gridSize = 6; }
@@ -78,7 +79,7 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // Save and Load need to be separated into a saves class to be reused in Nested circuit
     public void Save(String fileName) {
-        saves.Save(fileName);
+        saves.Save(gridCells, fileName);
     }
 
     public void Load(String fileName) {

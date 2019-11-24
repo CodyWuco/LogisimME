@@ -46,7 +46,7 @@ class LogicSimulator{
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    void initGrid(Point size){grid = new Grid(size.x, size.y);grid = new Grid(size.x, size.y);}
+    void initGrid(Point size){grid = new Grid(size.x, size.y, contextInterface.getContext());}
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     void newGame(){
