@@ -25,5 +25,6 @@ public class NestedCircuitDriver {
         // copy the circuit into a nested circuit logic
         NestedCircuitLogic ncl = new NestedCircuitLogic("test Node", and2);
 
+
     }
 }

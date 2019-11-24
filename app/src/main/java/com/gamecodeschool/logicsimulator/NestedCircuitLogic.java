@@ -49,8 +49,8 @@ public class NestedCircuitLogic {
 
     }
     private boolean createCopyFromCircuit(LogicNode logicNode) {
-        // if null add to inputs
-        if(logicNode == null){
+        // if null or switch add to inputs
+        if((logicNode == null) || (logicNode instanceof SwitchNode)){
             return false;
         }
         if(head == null){ head = tree.get(0);}
