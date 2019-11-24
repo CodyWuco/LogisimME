@@ -27,7 +27,7 @@ class LogicSimulator{
         contextInterface = new LogisimContextInterface(context);
 
         // This Keeping the saving manager in here will allow us to remove the burden from the rest
-        // of the program. We can also used this as a start to refactor our click controler out of
+        // of the program. We can also used this as a start to refactor our click controller out of
         // our grid class.
         saves = new AbstractGridCellSaves(contextInterface.getContext());
 

@@ -28,6 +28,7 @@ class Grid implements Serializable {
     int gridSize;
     AbstractGridCell selected, previousSelection, wireSource;
     Context context;
+    AbstractGridCellSaves saves;
 
     private class GridPosition{
         int x,y;
@@ -39,6 +40,8 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public Grid(int x, int y){
+        saves = new AbstractGridCellSaves(context);
+
         if (x > y){ gridSize = 6; }
         else { gridSize = 10; }
 
@@ -75,15 +78,7 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // Save and Load need to be separated into a saves class to be reused in Nested circuit
     public void Save(String fileName) {
-        try {
-            FileOutputStream fos = context.openFileOutput(fileName, MODE_PRIVATE);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(gridCells);
-            oos.close();
-            fos.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
+        saves.Save(fileName);
     }
 
     public void Load(String fileName) {
