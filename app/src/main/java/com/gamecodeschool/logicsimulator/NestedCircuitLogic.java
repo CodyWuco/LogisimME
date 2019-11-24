@@ -24,14 +24,14 @@ public class NestedCircuitLogic {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // This takes in a save name and loads the correct circuit
-    public NestedCircuitLogic(String saveName){
+    public NestedCircuitLogic(String saveName) {
         loadLogicCircuit(saveName);
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // This creates a copy of a circuits logic. Then is removes the switches and LED nodes, and
     // creates a vector of the avaibable inputs.
-    private void createCopyFromCircuitHead(LogicNode oldHead){
+    private void createCopyFromCircuitHead(LogicNode oldHead) {
 
     }
 
@@ -39,21 +39,7 @@ public class NestedCircuitLogic {
     // This save the circuit to a file using a string
     // function that saves tree to a file as a List. This will work since the Logic nodes keep
     // track of their own tree.
-    private void saveLogicCurcuit(String saveName){}
-
-    //``````````````````````````````````````````````````````````````````````````````````````````````
-    // This loads a previously saved CircuitTree and sets head to the head of the tree
-    public void loadLogicCircuit(String saveName){}
-    // create a function to keep track of the the tree on loads
-
-    //``````````````````````````````````````````````````````````````````````````````````````````````
-    // Starts the eval of the logic tree
-    public boolean eval(){ return head.eval();}
-
-
-    //``````````````````````````````````````````````````````````````````````````````````````````````
-    // Save and Load need to be separated into a saves class to be reused in Nested circuit
-    public void Save(Context context, Vector Cells, String fileName) {
+    private void saveLogicCurcuit(Context context, Vector Cells, String fileName) {
         try {
             FileOutputStream fos = context.openFileOutput(fileName, MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -65,7 +51,9 @@ public class NestedCircuitLogic {
         }
     }
 
-    public void Load(String fileName) {
+    //``````````````````````````````````````````````````````````````````````````````````````````````
+    // This loads a previously saved CircuitTree and sets head to the head of the tree
+    public void loadLogicCircuit(String fileName) {
         try {
             FileInputStream fis = context.openFileInput(fileName);
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -80,4 +68,12 @@ public class NestedCircuitLogic {
             return;
         }
     }
+    // create a function to keep track of the the tree on loads
+
+    //``````````````````````````````````````````````````````````````````````````````````````````````
+    // Starts the eval of the logic tree
+    public boolean eval() {
+        return head.eval();
+    }
 }
+
