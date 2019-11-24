@@ -84,7 +84,6 @@ public class MainActivity extends Activity {
         game = new LogicSimulator(this, size);
         setContentView(game.gameView);
 
-        game.setContext(this);
         game.Load("Quick Save");
     }
 

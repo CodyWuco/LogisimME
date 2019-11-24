@@ -16,10 +16,8 @@ abstract class LogicNode extends AbstractGridCell{
     public void setInput(LogicNode n){if(inputA == null){setA(n);}else if(inputB == null){setB(n);}}
     public void setA(LogicNode n)                       {this.inputA = n;}
     public void setB(LogicNode n)                       {this.inputB = n;}
-    public void getInputs(Vector<AbstractGridCell> inputs){
-        inputs.add(inputA);
-        inputs.add(inputB);
-    }
+    public LogicNode getA()                             {return inputA;}
+    public LogicNode getB()                             {return inputB;}
     public void clearInput()                            {this.inputA = null; this.inputB = null;}
     public void drawWires(Canvas canvas, Paint paint){
 

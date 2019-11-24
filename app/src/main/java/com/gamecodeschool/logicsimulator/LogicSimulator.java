@@ -38,7 +38,7 @@ class LogicSimulator{
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    void initGrid(Point size){grid = new Grid(size.x, size.y);}
+    void initGrid(Point size){grid = new Grid(size.x, size.y, this.context);}
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     void newGame(){
@@ -58,7 +58,6 @@ class LogicSimulator{
         draw();
     }
 
-    void setContext(Context context)        { grid.setContext(context);}
     void Save(String fileName)              { grid.Save(fileName);}
     void Load(String fileName)              { grid.Load(fileName); draw();}
 }
