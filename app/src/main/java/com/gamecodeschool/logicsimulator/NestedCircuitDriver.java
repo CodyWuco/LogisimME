@@ -16,12 +16,9 @@ public class NestedCircuitDriver {
 
         // set up basic circuit
         and1.setInput(switch1); and1.setInput(switch2);
-
         or1.setInput(switch3); or1.setInput(switch4);
         not1.setInput(or1);
-
         and2.setInput(and1); and2.setInput(or1);
-
         LED1.setInput(and2);
 
 

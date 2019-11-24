@@ -19,6 +19,13 @@ public class NestedCircuitLogic {
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
+    // This creates a copy of a circuits logic. Then is removes the switches and LED nodes, and
+    // creates a vector of the avaibable inputs.
+    private void createCopyFromCircuitHead(LogicNode oldHead){
+
+    }
+
+    //``````````````````````````````````````````````````````````````````````````````````````````````
     // This save the circuit to a file using a string
     // function that saves tree to a file as a List. This will work since the Logic nodes keep
     // track of their own tree.
