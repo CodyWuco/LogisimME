@@ -39,9 +39,7 @@ class Grid implements Serializable {
     public Vector<AbstractGridCell> gridCells;
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public Grid(int x, int y, Context context){
-        this.context = context;
-        saves = new AbstractGridCellSaves(context);
+    public Grid(int x, int y){
 
         if (x > y){ gridSize = 6; }
         else { gridSize = 10; }

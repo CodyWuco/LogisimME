@@ -15,23 +15,15 @@ class LogicSimulator{
     Canvas canvas;
     Paint paint;
     Grid grid;
+    Context context;
     Point size;
-    LogisimContextInterface contextInterface;
-    AbstractGridCellSaves saves;
 
     public LogicSimulator(Context context, Point size){
-        initCanvas(context, size);
-        initGrid(size);
-
-        // This will keep track of the context intend for the rest of the program.
-        contextInterface = new LogisimContextInterface(context);
-
-        // This Keeping the saving manager in here will allow us to remove the burden from the rest
-        // of the program. We can also used this as a start to refactor our click controller out of
-        // our grid class.
-        saves = new AbstractGridCellSaves(contextInterface.getContext());
-
+        this.context = context;
         this.size = size;
+
+        initCanvas(this.context, this.size);
+        initGrid(size);
         newGame();
         draw();
     }
@@ -46,7 +38,7 @@ class LogicSimulator{
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    void initGrid(Point size){grid = new Grid(size.x, size.y, contextInterface.getContext());}
+    void initGrid(Point size){grid = new Grid(size.x, size.y);}
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     void newGame(){
