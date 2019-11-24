@@ -13,16 +13,14 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class AbstractGridCellSaves {
     Context context;
-    String fileName;
 
-    AbstractGridCellSaves(Context context, String fileName){
+    AbstractGridCellSaves(Context context){
         this.context = context;
-        this.fileName = fileName;
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // Save and Load need to be separated into a saves class to be reused in Nested circuit
-    public void Save(Vector Cells) {
+    public void Save(Vector Cells, String fileName) {
         try {
             FileOutputStream fos = context.openFileOutput(fileName, MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -34,11 +32,11 @@ public class AbstractGridCellSaves {
         }
     }
 
-    public void Load(Vector Cells) {
+    public void Load(Vector cells, String fileName) {
         try {
             FileInputStream fis = context.openFileInput(fileName);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            Cells = (Vector<AbstractGridCell>) ois.readObject();
+            cells = (Vector<AbstractGridCell>) ois.readObject();
             ois.close();
             fis.close();
         } catch (IOException ioe) {

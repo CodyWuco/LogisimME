@@ -17,12 +17,15 @@ class LogicSimulator{
     Grid grid;
     Point size;
     LogisimContextInterface contextInterface;
+    AbstractGridCellSaves saves;
 
     public LogicSimulator(Context context, Point size){
         initCanvas(context, size);
         initGrid(size);
 
         contextInterface = new LogisimContextInterface(context);
+        saves = new AbstractGridCellSaves(contextInterface.getContext());
+
         this.size = size;
         newGame();
         draw();
