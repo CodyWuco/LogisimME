@@ -16,11 +16,13 @@ class LogicSimulator{
     Paint paint;
     Grid grid;
     Point size;
+    LogisimContextInterface contextInterface;
 
     public LogicSimulator(Context context, Point size){
         initCanvas(context, size);
         initGrid(size);
 
+        contextInterface = new LogisimContextInterface(context);
         this.size = size;
         newGame();
         draw();
