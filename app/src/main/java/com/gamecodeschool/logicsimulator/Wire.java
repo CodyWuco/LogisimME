@@ -6,66 +6,57 @@ import java.lang.Math;
  *
  */
 public class Wire {
-    private int x0,y0,x1,y1,strokeWidth;
+    private float x0,y0,x1,y1;
+    private int strokeWidth;
 
-    public Wire(int x0, int y0, int x1, int y1) { this.x0=x0; this.y0=y0; this.x1=x1; this.y1=y1;
-        strokeWidth=1;}
+    public Wire(float x0, float y0, float x1, float y1)
+               {this.x0=x0; this.y0=y0; this.x1=x1; this.y1=y1; strokeWidth=1;}
+
+        int midx = midPointX();
+        int midy = midPointY();
     //------------------INITIAL------------------------\\
-    public int midPointInitialComponentX(float x) {
-        float X;
-        X = Math.round(x);
-        x0 = (int)X;
+    //converts X and Y coordinates into integer for grid
+    //layout compatibility
 
+    public int midPointInitialComponentX() {
+        int x0 = (int)this.x0;
         return x0;
     }
-
-    public float midPointInitialComponentY(float y) {
-        float Y;
-        Y = Math.round(y);
-        y0 = (int)Y;
-
+    public int midPointInitialComponentY() {
+        int y0 = (int)this.y0;
         return y0;
     }
     //---------------FINAL-------------------------\\
-    public float midPointFinalComponentX(float x) {
-        float X;
-        X = Math.round(x);
-        x1 = (int)x;
-
+    public int midPointFinalComponentX() {
+        int x1 = (int)this.x1;
         return x1;
     }
-
-    public float midPointFinalComponentY(float y) {
-        float Y;
-        Y = Math.round(y);
-        y1 = (int)Y;
-
+    public int midPointFinalComponentY() {
+        int y1 = (int)this.y1;
         return y1;
     }
     //CAN USE MIDPOINT TO DO (X,NULL), (NULL,Y)
     //---------------MIDPOINT----------------------\\   //can use
     public int midPointX(){
-        int x;
-        x = (x0+x1) / 2;
+        int x = ((midPointInitialComponentX()+midPointFinalComponentX())/2);
         return x;
     }
 
     public int midPointY(){
-        int y;
-        y = (y0+y1) / 2;
+        int y = ((midPointInitialComponentY()+midPointFinalComponentY())/2);
         return y;
     }
     //------------------------------------------------------\\
     //true midpoint
     public int midPointXY(){
-
-        return 0; //not sure if needed
+    int x = midPointX()*midPointY();
+        return x; //not sure if needed
     }
     //---------------MOVE--------------------------\\
     public float moveEventX(float x) {return x;}
     public float moveEventY(float y) {return y;}
     //---------------HYPOTENUSE--------------------\\
-    public int hypotenuse(){
+    public int hypotenuse(int hyp){
         //a^2 + b^2 = c^2
         //have values of each X/Y
 
