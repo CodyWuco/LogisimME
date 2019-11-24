@@ -44,6 +44,8 @@ class Grid implements Serializable {
         // saving and loading
         setContext(context);
 
+        saves = new AbstractGridCellSaves();
+
         if (x > y){ gridSize = 6; }
         else { gridSize = 10; }
 
@@ -80,7 +82,7 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
     // Save and Load need to be separated into a saves class to be reused in Nested circuit
     public void Save(String fileName) {
-        saves.Save(gridCells, fileName);
+        saves.Save(context, gridCells, fileName);
     }
 
     public void Load(String fileName) {
