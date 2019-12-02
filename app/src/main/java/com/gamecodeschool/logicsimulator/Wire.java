@@ -16,32 +16,28 @@ public class Wire {
     //converts X and Y coordinates into integer for grid
     //layout compatibility
 
-    public int midPointInitialComponentX() {
-        int x0 = (int)this.x0;
-        return x0;
+    public float midPointInitialComponentX(float x) {
+        return x;
     }
-    public int midPointInitialComponentY() {
-        int y0 = (int)this.y0;
-        return y0;
+    public float midPointInitialComponentY(float y) {
+        return y;
     }
     //---------------FINAL-------------------------\\
-    public int midPointFinalComponentX() {
-        int x1 = (int)this.x1;
-        return x1;
+    public float midPointFinalComponentX(float x) {
+        return x;
     }
-    public int midPointFinalComponentY() {
-        int y1 = (int)this.y1;
-        return y1;
+    public float midPointFinalComponentY(float y) {
+        return y;
     }
     //CAN USE MIDPOINT TO DO (X,NULL), (NULL,Y)
     //---------------MIDPOINT----------------------\\   //can use
     public int midPointX(){
-        int x = ((midPointInitialComponentX()+midPointFinalComponentX())/2);
+        int x = (int)((midPointInitialComponentX()+midPointFinalComponentX())/2);
         return x;
     }
 
     public int midPointY(){
-        int y = ((midPointInitialComponentY()+midPointFinalComponentY())/2);
+        int y = (int)((midPointInitialComponentY()+midPointFinalComponentY())/2);
         return y;
     }
     //------------------------------------------------------\\
