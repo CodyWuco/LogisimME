@@ -69,6 +69,7 @@ class ClickEvent{
 public class MainActivity extends Activity {
     LogicSimulator game;
     Wire wire;
+    WireMath wiremath;
     Display display;
     Point size;
 
@@ -97,17 +98,17 @@ public class MainActivity extends Activity {
 
     public boolean onTouchEvent(MotionEvent motionEvent){
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_DOWN) {
-            wire.midPointInitialComponentX(motionEvent.getX());
-            wire.midPointInitialComponentY(motionEvent.getY());
+            wiremath.midPointInitialComponentX(motionEvent.getX());
+            wiremath.midPointInitialComponentY(motionEvent.getY());
         }
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_MOVE) {
-            wire.moveEventX(motionEvent.getX());
-            wire.moveEventY(motionEvent.getY());
+            wiremath.moveEventX(motionEvent.getX());
+            wiremath.moveEventY(motionEvent.getY());
         }
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_UP) {
             game.touchGrid(motionEvent.getX(), motionEvent.getY());
-            wire.midPointFinalComponentX(motionEvent.getX());
-            wire.midPointFinalComponentY(motionEvent.getY());
+            wiremath.midPointFinalComponentX(motionEvent.getX());
+            wiremath.midPointFinalComponentY(motionEvent.getY());
         }
         return true;
     }

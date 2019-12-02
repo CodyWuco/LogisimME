@@ -16,4 +16,5 @@ public class Wire {
     int x = wireMath.midPointX();
     int y = wireMath.midPointY();
 
+
 }
