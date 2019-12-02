@@ -3,6 +3,7 @@ package com.gamecodeschool.logicsimulator;
 import java.lang.Math;
 
 public class WireMath {
+
     public float midPointInitialComponentX(float x) {
         return x;
     }
