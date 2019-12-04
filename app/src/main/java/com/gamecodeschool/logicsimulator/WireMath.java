@@ -1,20 +1,28 @@
 package com.gamecodeschool.logicsimulator;
 
+import android.view.MotionEvent;
+
 import java.lang.Math;
 
 public class WireMath {
 
-    public float midPointInitialComponentX(float x) {
+    MotionEvent motionEvent;
+    public float midPointInitialComponentX() {
+        float x = motionEvent.getX();
         return x;
     }
-    public float midPointInitialComponentY(float y) {
+    public float midPointInitialComponentY() {
+        float y = motionEvent.getY();
         return y;
     }
     //---------------FINAL-------------------------\\
-    public float midPointFinalComponentX(float x) {
+    public float midPointFinalComponentX() {
+        float x = motionEvent.getX();
         return x;
     }
-    public float midPointFinalComponentY(float y) {
+    public float midPointFinalComponentY()
+    {
+        float y = motionEvent.getY();
         return y;
     }
     //CAN USE MIDPOINT TO DO (X,NULL), (NULL,Y)

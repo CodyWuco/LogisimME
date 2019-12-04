@@ -95,7 +95,6 @@ public class MainActivity extends Activity {
         display.getSize(size);
     }
 
-
     public boolean onTouchEvent(MotionEvent motionEvent){
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_DOWN) {
             wiremath.midPointInitialComponentX(motionEvent.getX());

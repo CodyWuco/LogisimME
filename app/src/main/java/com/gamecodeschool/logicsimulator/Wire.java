@@ -5,7 +5,7 @@ import java.lang.Math;
  * In Wire, the logic for producing a taxicab route is made.
  *
  */
-public class Wire {
+public class Wire extends WireMath {
     private float x0,y0,x1,y1;
     private int strokeWidth;
 
