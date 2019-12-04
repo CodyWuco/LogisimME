@@ -51,8 +51,8 @@ class Grid implements Serializable {
         else { gridSize = 10; }
 
         blockSize = y / gridSize;
-        gridWidth =  x / blockSize;
-        gridHeight = y / blockSize;
+        gridWidth =  10;
+        gridHeight = 10;
         rand = new Random();
         selected = null;
         previousSelection = null;
@@ -63,13 +63,14 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public void reset(){
-        gridCells = new Vector<>(gridHeight*gridWidth);
+        gridCells = new Vector<>(10*10);
 
         for(int h=0; h<gridWidth*gridHeight; h++)
             for(int v=0; v<gridHeight; v++)
                 gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
                         blockSize)));
         setupGrid(); // remove this
+        setUpHud();
     }
 
     private void setupGrid(){
@@ -102,7 +103,7 @@ class Grid implements Serializable {
             c.printStackTrace();
             return;
         }
-        setupGrid();
+        //setupGrid();
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
