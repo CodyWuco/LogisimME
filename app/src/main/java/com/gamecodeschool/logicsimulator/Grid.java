@@ -138,7 +138,7 @@ class Grid implements Serializable {
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public int gridColumn(int column)            { return 6 * (column );}
+    public int gridColumn(int column)            { return 10 * (column );}
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public int gridRow(int row)                  { return (row);}
@@ -164,18 +164,29 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public int touchGrid(float touchX, float touchY){
-        GridPosition tP = getGridTouchPosition(touchX, touchY);
-        int currGridNum = gridCellN(tP);
-        AbstractGridCell clickedCell = onClick(currGridNum);
-
-
-        CellClickEvent(clickedCell, currGridNum);
-
-        return distanceToClosestFrom(tP);
+        if ( touchX > blockSize) {
+            GridPosition tP = getGridTouchPosition(touchX, touchY);
+            int currGridNum = gridCellN(tP);
+            AbstractGridCell clickedCell = onClick(currGridNum);
+            CellClickEvent(clickedCell, currGridNum);
+            return distanceToClosestFrom(tP);
+        }
+        else {
+            GridPosition tP = getHudTouchPosition(touchX, touchY);
+            int currGridNum = gridCellN(tP);
+            AbstractGridCell clickedCell = onClick(currGridNum);
+            CellClickEvent(clickedCell, currGridNum);
+            return distanceToClosestFrom(tP);
+        }
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public GridPosition getGridTouchPosition(float touchX, float touchY){
+        GridPosition tp = new GridPosition((int)touchX/ blockSize, (int)touchY/ blockSize);
+        return tp;
+    }
+    //``````````````````````````````````````````````````````````````````````````````````````````````
+    public GridPosition getHudTouchPosition(float touchX, float touchY){
         GridPosition tp = new GridPosition((int)touchX/ blockSize, (int)touchY/ blockSize);
         return tp;
     }
