@@ -2,27 +2,26 @@ package com.gamecodeschool.logicsimulator;
 
 import android.graphics.PointF;
 
-public class ObjectSpecific {
-    private String tag;
-    private String bitmapName;
-    private float speed; //won't need it
+abstract class ObjectSpecific {
+    private String nTag;
+    private String nBitmapName;
+    //private float speed; //won't need it
     private PointF sizeScale;
-    private String[] components;
+    private String[] nComponents;
 
-    ObjectSpecific(String tag, String bitmapName, PointF relativeScale,
-                   String[] components) {
-        this.tag = tag;
-        this.bitmapName = bitmapName;
-        this.sizeScale = relativeScale;
-        this.components = components;
+    ObjectSpecific(String tag, String bitmapName, PointF relativeScale, String[] components) {
+        nTag = tag;
+        nBitmapName = bitmapName;
+        sizeScale = relativeScale;
+        nComponents = components;
     }
 
     String getTag() {
-        return tag;
+        return nTag;
     }
 
     String getBitmapName() {
-        return bitmapName;
+        return nBitmapName;
     }
 
     PointF getSizeScale() {
@@ -30,7 +29,7 @@ public class ObjectSpecific {
     }
 
     String[] getComponents() {
-        return components;
+        return nComponents;
     }
 
 }
