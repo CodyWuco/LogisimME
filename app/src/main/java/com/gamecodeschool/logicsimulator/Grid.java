@@ -57,8 +57,8 @@ class Grid implements Serializable {
         selected = null;
         previousSelection = null;
         wireSource = null;
-        setUpHud2();
         reset();
+        setUpHud2();
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
@@ -110,9 +110,10 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
 
     public void setUpHud2(){
-        hudCells = new Vector<>();
+        hudCells = new Vector<>(0);
         int row = 0, column = 0;
-        addIconToHud2(new SwitchIcon(new EmptyGridCell(0 * blockSize,0 * blockSize,blockSize, blockSize)),row,column);
+        addIconToHud2(new SwitchIcon(new EmptyGridCell(1 * blockSize,1 * blockSize,blockSize, blockSize)),row,column);
+        Log.i("hud2", "BlockSize: " + blockSize);
     }
 
     public void addIconToHud2(AbstractGridCell Icon, int row, int column){
@@ -122,6 +123,7 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
 
     public void setUpHud(){
+        Log.i("hud", "BlockSize: " + blockSize);
         int row = 0, column = 0;
         addIconToHud(new SwitchIcon(new EmptyGridCell(1 * blockSize,1 * blockSize,blockSize, blockSize)),row,column);
         row = 1; column = 0;
