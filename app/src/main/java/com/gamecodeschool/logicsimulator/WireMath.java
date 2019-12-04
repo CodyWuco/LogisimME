@@ -20,12 +20,12 @@ public class WireMath {
     //CAN USE MIDPOINT TO DO (X,NULL), (NULL,Y)
     //---------------MIDPOINT----------------------\\   //can use
     public int midPointX(){
-        int x = (int)((midPointInitialComponentX()+midPointFinalComponentX())/2);
+        int x = -1;//(int)((midPointInitialComponentX()+midPointFinalComponentX())/2);
         return x;
     }
 
     public int midPointY(){
-        int y = (int)((midPointInitialComponentY()+midPointFinalComponentY())/2);
+        int y = -1;//(int)((midPointInitialComponentY()+midPointFinalComponentY())/2);
         return y;
     }
     //------------------------------------------------------\\
