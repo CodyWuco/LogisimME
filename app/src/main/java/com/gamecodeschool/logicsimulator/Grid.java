@@ -59,6 +59,7 @@ class Grid implements Serializable {
         wireSource = null;
         reset();
         //setUpHud2();
+        // has to be called after reset(), because it relies on reset to set up gridCells first
         setUpHud();
     }
 
