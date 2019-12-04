@@ -25,7 +25,7 @@ abstract class LogicNode extends AbstractGridCell{
         if (inputB != null){ drawWire(canvas, paint, inputB);}
     }
     public void drawWire(Canvas canvas, Paint paint, LogicNode input) {
-        if(eval()){ paint.setColor(Color.YELLOW); }
+        if(input.eval()){ paint.setColor(Color.YELLOW); }
         else {paint.setColor(Color.BLUE);}
         paint.setStrokeWidth(5);
         canvas.drawLine( input.getX() +  input.getW() * 3/4,
