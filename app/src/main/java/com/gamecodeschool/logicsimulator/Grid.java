@@ -59,6 +59,7 @@ class Grid implements Serializable {
         wireSource = null;
         reset();
         setUpHud2();
+        setUpHud();
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
@@ -70,7 +71,6 @@ class Grid implements Serializable {
                 gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
                         blockSize)));
         setupGrid();
-        setUpHud();
     }
 
     private void setupGrid(){
