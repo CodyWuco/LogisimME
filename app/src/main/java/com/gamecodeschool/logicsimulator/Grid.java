@@ -110,8 +110,9 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
 
     public void setUpHud2(){
+        hudCells = new Vector<>();
         int row = 0, column = 0;
-        hudCells.add(new SwitchIcon(new EmptyGridCell(0 * blockSize,0 * blockSize,blockSize, blockSize)));
+        addIconToHud2(new SwitchIcon(new EmptyGridCell(0 * blockSize,0 * blockSize,blockSize, blockSize)),row,column);
     }
 
     public void addIconToHud2(AbstractGridCell Icon, int row, int column){
