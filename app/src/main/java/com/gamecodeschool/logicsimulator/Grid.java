@@ -37,6 +37,7 @@ class Grid implements Serializable {
 
 
     public Vector<AbstractGridCell> gridCells;
+    public Vector<AbstractGridCell> hudCells;
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public Grid(int x, int y, Context context){
@@ -56,6 +57,7 @@ class Grid implements Serializable {
         selected = null;
         previousSelection = null;
         wireSource = null;
+        setUpHud();
         reset();
     }
 
@@ -68,7 +70,6 @@ class Grid implements Serializable {
                 gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
                         blockSize)));
         setupGrid();
-        drawHud();
     }
 
     private void setupGrid(){
@@ -104,7 +105,8 @@ class Grid implements Serializable {
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public void drawHud(){
+
+    public void setUpHud(){
         int row = 0, column = 0;
         addIconToHud(new SwitchIcon(gridCells.get(iconLocation(row,column))),row,column);
         row = 1; column = 0;
@@ -136,7 +138,7 @@ class Grid implements Serializable {
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
-        gridCells.set(iconLocation(row,column), Icon);
+        //hudCells.add(iconLocation(row,column), Icon);
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
@@ -145,6 +147,7 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public int gridRow(int row)                  { return (row);}
 
+    // gives the grid vector number
     public int iconLocation(int row, int column){return gridRow(row) + gridColumn(column);}
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
@@ -274,6 +277,12 @@ class Grid implements Serializable {
         for(AbstractGridCell agc:gridCells) {
             agc.drawGrid(canvas, paint);
         }
-        drawHud();
+        //drawHud(canvas, paint);
     }
+    public void drawHud(Canvas canvas, Paint paint){
+        for(AbstractGridCell agc:gridCells) {
+            agc.drawGrid(canvas, paint);
+        }
+    }
+
 }
