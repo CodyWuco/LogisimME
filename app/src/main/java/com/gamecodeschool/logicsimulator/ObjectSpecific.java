@@ -16,4 +16,21 @@ public class ObjectSpecific {
         this.sizeScale = relativeScale;
         this.components = components;
     }
+
+    String getTag() {
+        return tag;
+    }
+
+    String getBitmapName() {
+        return bitmapName;
+    }
+
+    PointF getSizeScale() {
+        return sizeScale;
+    }
+
+    String[] getComponents() {
+        return components;
+    }
+
 }
