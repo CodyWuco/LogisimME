@@ -58,8 +58,6 @@ class Grid implements Serializable {
         previousSelection = null;
         wireSource = null;
         reset();
-        //setUpHud2();
-        // has to be called after reset(), because it relies on reset to set up gridCells first
         setUpHud();
     }
 
@@ -71,7 +69,7 @@ class Grid implements Serializable {
             for(int v=0; v<gridHeight; v++)
                 gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
                         blockSize)));
-        setupGrid();
+        setupGrid(); // remove this
     }
 
     private void setupGrid(){
@@ -143,7 +141,8 @@ class Grid implements Serializable {
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
-        hudCells.add(iconLocation(row,column), Icon);
+        //hudCells.add(iconLocation(row,column), Icon);
+        gridCells.set(iconLocation(row,column), Icon); //remove this
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
