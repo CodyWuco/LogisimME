@@ -98,7 +98,7 @@ public class MainActivity extends Activity {
     public boolean onTouchEvent(MotionEvent motionEvent){
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_DOWN) {
             wiremath.midPointInitialComponentX();
-            wiremath.midPointInitialComponentY());
+            wiremath.midPointInitialComponentY();
         }
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_MOVE) {
             wiremath.moveEventX(motionEvent.getX());
