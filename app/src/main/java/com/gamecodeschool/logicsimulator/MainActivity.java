@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
         game = new LogicSimulator(this, size);
         setContentView(game.gameView);
 
-        game.Load("Quick Save");
+        //game.Load("Quick Save");
     }
 
     // Get the current device's screen resolution

@@ -37,6 +37,7 @@ class Grid implements Serializable {
 
 
     public Vector<AbstractGridCell> gridCells;
+    public Vector<AbstractGridCell> hudCells;
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public Grid(int x, int y, Context context){
@@ -57,6 +58,9 @@ class Grid implements Serializable {
         previousSelection = null;
         wireSource = null;
         reset();
+        //setUpHud2();
+        // has to be called after reset(), because it relies on reset to set up gridCells first
+        setUpHud();
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
@@ -76,6 +80,7 @@ class Grid implements Serializable {
                 gridCells.get(gridSize*h+v).setLocation(h*blockSize,v*blockSize,
                         blockSize, blockSize);
     }
+
 
     public void setContext(Context context){this.context = context;}
 
@@ -102,10 +107,26 @@ class Grid implements Serializable {
         setupGrid();
     }
 
+
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public void drawHud(){
+
+    public void setUpHud2(){
         int row = 0, column = 0;
-        addIconToHud(new SwitchIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud2(new SwitchIcon(new EmptyGridCell(1 * blockSize,1 * blockSize,blockSize, blockSize)),row,column);
+        Log.i("hud2", "BlockSize: " + blockSize);
+    }
+
+    public void addIconToHud2(AbstractGridCell Icon, int row, int column){
+        hudCells.add(Icon);
+    }
+
+    //``````````````````````````````````````````````````````````````````````````````````````````````
+
+    public void setUpHud(){
+        hudCells = new Vector<>(0);
+        Log.i("hud", "BlockSize: " + blockSize);
+        int row = 0, column = 0;
+        addIconToHud(new SwitchIcon(new EmptyGridCell(0 * blockSize,0 * blockSize,blockSize, blockSize)),row,column);
         row = 1; column = 0;
         addIconToHud(new AndIcon(gridCells.get(iconLocation(row,column))),row,column);
         row = 2 ; column = 0;
@@ -135,7 +156,7 @@ class Grid implements Serializable {
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
-        gridCells.set(iconLocation(row,column), Icon);
+        hudCells.add(iconLocation(row,column), Icon);
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
@@ -144,6 +165,7 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public int gridRow(int row)                  { return (row);}
 
+    // gives the grid vector number
     public int iconLocation(int row, int column){return gridRow(row) + gridColumn(column);}
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
@@ -238,7 +260,7 @@ class Grid implements Serializable {
 
     public void doClearIconEvent(AbstractGridCell clickedCell, int currGridNum) {
         if(previousSelection instanceof ClearScreenIcon)
-        { reset(); drawHud(); previousSelection = null; }
+        { reset();  previousSelection = null; }
         else { previousSelection = clickedCell;}
     }
 
@@ -270,7 +292,15 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public void drawGrid(Canvas canvas, Paint paint){
-        for(AbstractGridCell agc:gridCells)
-            agc.drawGrid(canvas,paint);
+        for(AbstractGridCell agc:gridCells) {
+            agc.drawGrid(canvas, paint);
+        }
+        drawHud(canvas, paint);
     }
+    public void drawHud(Canvas canvas, Paint paint){
+        for(AbstractGridCell agc:hudCells) {
+            agc.drawGrid(canvas, paint);
+        }
+    }
+
 }
