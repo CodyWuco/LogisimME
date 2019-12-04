@@ -69,7 +69,7 @@ class Grid implements Serializable {
             for(int v=0; v<gridHeight; v++)
                 gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
                         blockSize)));
-        setUpHud();
+        setUpHud();//remove this. this is only needed if the hud is on the grid
     }
 
 
@@ -133,8 +133,8 @@ class Grid implements Serializable {
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
-        //hudCells.add(iconLocation(row,column), Icon);
-        gridCells.set(iconLocation(row,column), Icon); //remove this
+        //hudCells.add(iconLocation(row,column), Icon); // used to take hud off of the grid
+        gridCells.set(iconLocation(row,column), Icon); //remove this. it puts the hud on the grid
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
