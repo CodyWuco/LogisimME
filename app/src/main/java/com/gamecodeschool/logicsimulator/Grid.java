@@ -278,7 +278,6 @@ class Grid implements Serializable {
             agc.drawGrid(canvas, paint);
         }
         //drawHud(canvas, paint);
-        setUpHud();
     }
     public void drawHud(Canvas canvas, Paint paint){
         for(AbstractGridCell agc:gridCells) {
