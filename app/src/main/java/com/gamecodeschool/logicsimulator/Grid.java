@@ -68,6 +68,7 @@ class Grid implements Serializable {
                 gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
                         blockSize)));
         setupGrid();
+        drawHud();
     }
 
     private void setupGrid(){
@@ -238,7 +239,7 @@ class Grid implements Serializable {
 
     public void doClearIconEvent(AbstractGridCell clickedCell, int currGridNum) {
         if(previousSelection instanceof ClearScreenIcon)
-        { reset(); drawHud(); previousSelection = null; }
+        { reset();  previousSelection = null; }
         else { previousSelection = clickedCell;}
     }
 
@@ -270,7 +271,9 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public void drawGrid(Canvas canvas, Paint paint){
-        for(AbstractGridCell agc:gridCells)
-            agc.drawGrid(canvas,paint);
+        for(AbstractGridCell agc:gridCells) {
+            agc.drawGrid(canvas, paint);
+        }
+        drawHud();
     }
 }
