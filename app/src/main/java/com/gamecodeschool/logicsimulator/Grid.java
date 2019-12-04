@@ -126,7 +126,7 @@ class Grid implements Serializable {
         hudCells = new Vector<>(0);
         Log.i("hud", "BlockSize: " + blockSize);
         int row = 0, column = 0;
-        addIconToHud(new SwitchIcon(new EmptyGridCell(1 * blockSize,1 * blockSize,blockSize, blockSize)),row,column);
+        addIconToHud(new SwitchIcon(new EmptyGridCell(0 * blockSize,0 * blockSize,blockSize, blockSize)),row,column);
         row = 1; column = 0;
         addIconToHud(new AndIcon(gridCells.get(iconLocation(row,column))),row,column);
         row = 2 ; column = 0;

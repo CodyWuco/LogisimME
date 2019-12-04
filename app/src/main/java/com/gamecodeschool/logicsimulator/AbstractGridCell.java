@@ -19,7 +19,7 @@ abstract class AbstractGridCell implements Serializable {
     public void drawGrid(Canvas canvas, Paint paint, int fillColor){
         //Here you draw the grid with the known size given in x,y,w,h
         // Draw the player's shot
-        fillRect(canvas, paint, fillColor, 3);
+        fillRect(canvas, paint, fillColor, 1);
 
         // Change the paint color to black
         paint.setColor(Color.BLACK);
