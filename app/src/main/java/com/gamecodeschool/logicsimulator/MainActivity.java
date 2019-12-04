@@ -73,19 +73,19 @@ public class MainActivity extends Activity {
     Display display;
     Point size;
 
-   /* //@Override
+    /*//@Override
     protected void onCreate1(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.horizontal_layout); }*/
+        setContentView(R.layout.activity_main); }*/
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {          //80-98-107
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.horizontal_layout);
         getScreenRes();
         game = new LogicSimulator(this, size);
         setContentView(game.gameView);
 
-        game.Load("Quick Save");
+        //game.Load("Quick Save");
     }
 
     // Get the current device's screen resolution
@@ -97,17 +97,17 @@ public class MainActivity extends Activity {
 
     public boolean onTouchEvent(MotionEvent motionEvent){
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_DOWN) {
-            wiremath.midPointInitialComponentX(motionEvent.getX());
-            wiremath.midPointInitialComponentY(motionEvent.getY());
+            //wiremath.midPointInitialComponentX(motionEvent.getX());
+            //wiremath.midPointInitialComponentY(motionEvent.getY());
         }
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_MOVE) {
-            wiremath.moveEventX(motionEvent.getX());
-            wiremath.moveEventY(motionEvent.getY());
+            //wiremath.moveEventX(motionEvent.getX());
+            //wiremath.moveEventY(motionEvent.getY());
         }
         if((motionEvent.getAction() & MotionEvent.ACTION_MASK) == MotionEvent.ACTION_UP) {
             game.touchGrid(motionEvent.getX(), motionEvent.getY());
-            wiremath.midPointFinalComponentX(motionEvent.getX());
-            wiremath.midPointFinalComponentY(motionEvent.getY());
+            //wiremath.midPointFinalComponentX(motionEvent.getX());
+           // wiremath.midPointFinalComponentY(motionEvent.getY());
         }
         return true;
     }
