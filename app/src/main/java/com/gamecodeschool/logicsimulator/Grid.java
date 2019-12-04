@@ -107,19 +107,6 @@ class Grid implements Serializable {
         setupGrid();
     }
 
-
-    //``````````````````````````````````````````````````````````````````````````````````````````````
-
-    public void setUpHud2(){
-        int row = 0, column = 0;
-        addIconToHud2(new SwitchIcon(new EmptyGridCell(1 * blockSize,1 * blockSize,blockSize, blockSize)),row,column);
-        Log.i("hud2", "BlockSize: " + blockSize);
-    }
-
-    public void addIconToHud2(AbstractGridCell Icon, int row, int column){
-        hudCells.add(Icon);
-    }
-
     //``````````````````````````````````````````````````````````````````````````````````````````````
 
     public void setUpHud(){
