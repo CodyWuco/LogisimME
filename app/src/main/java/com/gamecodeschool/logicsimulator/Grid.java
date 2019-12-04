@@ -58,7 +58,7 @@ class Grid implements Serializable {
         previousSelection = null;
         wireSource = null;
         reset();
-        setUpHud2();
+        //setUpHud2();
         setUpHud();
     }
 
@@ -110,7 +110,6 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
 
     public void setUpHud2(){
-        hudCells = new Vector<>(0);
         int row = 0, column = 0;
         addIconToHud2(new SwitchIcon(new EmptyGridCell(1 * blockSize,1 * blockSize,blockSize, blockSize)),row,column);
         Log.i("hud2", "BlockSize: " + blockSize);
@@ -123,6 +122,7 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
 
     public void setUpHud(){
+        hudCells = new Vector<>(0);
         Log.i("hud", "BlockSize: " + blockSize);
         int row = 0, column = 0;
         addIconToHud(new SwitchIcon(new EmptyGridCell(1 * blockSize,1 * blockSize,blockSize, blockSize)),row,column);
