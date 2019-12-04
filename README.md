@@ -180,6 +180,9 @@ All non-selection event return selected to null. Prevents the need for highlight
 
 ### Hud:
 
+-   Should be contained on the longer side of the screen in a straight line
+-   Should register touches on the visually define locations of each button.
+
 #### Controls Icons(Cells):
 
 -   Clear Screen Icon
