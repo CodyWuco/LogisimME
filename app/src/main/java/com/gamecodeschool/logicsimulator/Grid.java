@@ -57,7 +57,6 @@ class Grid implements Serializable {
         selected = null;
         previousSelection = null;
         wireSource = null;
-        setUpHud();
         reset();
     }
 
@@ -70,6 +69,7 @@ class Grid implements Serializable {
                 gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
                         blockSize)));
         setupGrid();
+        setUpHud();
     }
 
     private void setupGrid(){
@@ -138,7 +138,7 @@ class Grid implements Serializable {
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
-        //hudCells.add(iconLocation(row,column), Icon);
+        gridCells.set(iconLocation(row,column), Icon);
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
@@ -278,6 +278,7 @@ class Grid implements Serializable {
             agc.drawGrid(canvas, paint);
         }
         //drawHud(canvas, paint);
+        setUpHud();
     }
     public void drawHud(Canvas canvas, Paint paint){
         for(AbstractGridCell agc:gridCells) {
