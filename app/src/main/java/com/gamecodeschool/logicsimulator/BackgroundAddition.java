@@ -14,6 +14,6 @@ class BackgroundAddition extends ObjectSpecific {
     BackgroundAddition() {
         super(bitmapName, relativeScale, components);
     }
-    
+
 
 }
