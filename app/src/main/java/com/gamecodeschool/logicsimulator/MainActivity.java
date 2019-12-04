@@ -72,12 +72,12 @@ public class MainActivity extends Activity {
     Display display;
     Point size;
 
-   /* //@Override
+    /*//@Override
     protected void onCreate1(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.horizontal_layout); }*/
+        setContentView(R.layout.activity_main); }*/
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {          //80-98-107
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.horizontal_layout);
         getScreenRes();
