@@ -69,15 +69,7 @@ class Grid implements Serializable {
             for(int v=0; v<gridHeight; v++)
                 gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
                         blockSize)));
-        setupGrid(); // remove this
         setUpHud();
-    }
-
-    private void setupGrid(){
-        for(int h=0; h<gridWidth; h++)
-            for(int v=0; v<gridHeight; v++)
-                gridCells.get(gridSize*h+v).setLocation(h*blockSize,v*blockSize,
-                        blockSize, blockSize);
     }
 
 
@@ -103,7 +95,6 @@ class Grid implements Serializable {
             c.printStackTrace();
             return;
         }
-        //setupGrid();
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
