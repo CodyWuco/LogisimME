@@ -7,40 +7,40 @@ import java.lang.Math;
 public class WireMath {
 
     MotionEvent motionEvent;
-    public float midPointInitialComponentX() {
-        float x = motionEvent.getX();
-        return x;
+    public int midPointInitialComponentX() {
+        //int x = (int)motionEvent.getX();
+        return -1;
     }
-    public float midPointInitialComponentY() {
-        float y = motionEvent.getY();
-        return y;
+    public int midPointInitialComponentY() {
+        //int y = (int)motionEvent.getY();
+        return -1;
     }
     //---------------FINAL-------------------------\\
-    public float midPointFinalComponentX() {
-        float x = motionEvent.getX();
-        return x;
+    public int midPointFinalComponentX() {
+        //int x = (int)motionEvent.getX();
+        return -1;
     }
-    public float midPointFinalComponentY()
+    public int midPointFinalComponentY()
     {
-        float y = motionEvent.getY();
-        return y;
+        //int y = (int)motionEvent.getY();
+        return -1;
     }
     //CAN USE MIDPOINT TO DO (X,NULL), (NULL,Y)
     //---------------MIDPOINT----------------------\\   //can use
     public int midPointX(){
-        int x = (int)((midPointInitialComponentX()+midPointFinalComponentX())/2);
-        return x;
+        //int x = ((midPointInitialComponentX()+midPointFinalComponentX())/2);
+        return -1;
     }
 
     public int midPointY(){
-        int y = (int)((midPointInitialComponentY()+midPointFinalComponentY())/2);
-        return y;
+        //int y = ((midPointInitialComponentY()+midPointFinalComponentY())/2);
+        return -1;
     }
     //------------------------------------------------------\\
     //true midpoint
     public int midPointXY(){
-        int x = midPointX()*midPointY();
-        return x; //not sure if needed
+        //int x = midPointX()*midPointY();
+        return -1; //not sure if needed
     }
     //---------------MOVE--------------------------\\
     public float moveEventX(float x) {return x;}
