@@ -188,8 +188,8 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public GridPosition getGridTouchPosition(float touchX, float touchY){
-        GridPosition tp = new GridPosition((int)touchX + xOffset/ blockSize,
-                (int)touchY + yOffset/ blockSize);
+        GridPosition tp = new GridPosition(((int)touchX + xOffset)/ blockSize,
+                ((int)touchY + yOffset)/ blockSize);
         return tp;
     }
     //``````````````````````````````````````````````````````````````````````````````````````````````
