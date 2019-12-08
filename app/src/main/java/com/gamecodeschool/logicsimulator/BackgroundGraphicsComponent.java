@@ -17,14 +17,14 @@ class BackgroundGraphicsComponent implements GraphicsComponent {
     @Override
     public void initialize(Context c, ObjectSpecific s, PointF objectSize) {
         // Make a resource id out of the string of the file name
-        /*int resID = context.getResources()
-                .getIdentifier(spec.getBitmapName(),
-                        "drawable",
-                        context.getPackageName());
+        int resID = c.getResources()
+                .getIdentifier(s.getBitmapName(),
+                        "id",
+                        c.getPackageName());
 
         // Load the bitmap using the id
         bitmap = BitmapFactory.decodeResource(
-                context.getResources(), resID);*/
+                c.getResources(), resID);
 
         // Resize the bitmap
         bitmap = Bitmap.createScaledBitmap(bitmap, (int) objectSize.x,
