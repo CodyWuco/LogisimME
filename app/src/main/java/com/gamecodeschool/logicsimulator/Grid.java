@@ -175,7 +175,8 @@ class Grid implements Serializable {
     public int touchGrid(float touchX, float touchY){
         // this "if" checks if the click was a block size away from the edge of the screen
         // this is done to get screen space to the hud layout
-        if ( touchX > blockSize) {
+        int reservedUISpace = 3;
+        if ( touchX > blockSize*reservedUISpace) {
             GridPosition tP = getGridTouchPosition(touchX, touchY);
             int currGridNum = gridCellN(tP);
             AbstractGridCell clickedCell = onClick(currGridNum);
