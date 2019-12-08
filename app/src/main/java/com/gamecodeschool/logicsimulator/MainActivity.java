@@ -78,6 +78,17 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); }*/
 
+   /* @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        game = new LogicSimulator(this, size);
+        setContentView(game.gameView);
+    }*/
+
     protected void onCreate(Bundle savedInstanceState) {          //80-98-107
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.horizontal_layout);

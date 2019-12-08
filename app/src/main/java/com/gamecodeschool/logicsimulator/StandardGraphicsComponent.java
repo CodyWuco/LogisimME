@@ -15,14 +15,14 @@ class StandardGraphicsComponent implements GraphicsComponent {
     @Override
     public void initialize(Context context, ObjectSpecific spec, PointF objectSize) {
         // Make a resource id out of the string of the file name
-        /*int resID = context.getResources()
+        int resID = context.getResources()
                 .getIdentifier(spec.getBitmapName(),
-                        "drawable",
+                        "id",
                         context.getPackageName());
 
         // Load the bitmap using the id
         bitmap = BitmapFactory.decodeResource(
-                context.getResources(), resID);*/
+                context.getResources(), resID);
 
         // Resize the bitmap
         bitmap = Bitmap
@@ -34,7 +34,7 @@ class StandardGraphicsComponent implements GraphicsComponent {
 
     @Override
     public void draw(Canvas canvas, Paint paint, Transform t) {
-            canvas.drawBitmap(bitmap, t.getScreenSize().x,
-                    t.getScreenSize().y, paint);
+            canvas.drawBitmap(bitmap, t.getLocation().x,
+                    t.getLocation().y, paint);
     }
 }

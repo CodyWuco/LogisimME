@@ -11,8 +11,8 @@ class LogicSimulator{
     // Here are all the objects(instances)
     // of classes that we need to do some drawing
     ImageView gameView;
-    Bitmap blankBitmap;
-    Canvas canvas;
+    Bitmap blankBitmap,blankBitmap2;
+    Canvas canvas, canvas2;
     Paint paint;
     Grid grid;
     Context context;
@@ -35,6 +35,8 @@ class LogicSimulator{
         canvas = new Canvas(blankBitmap);
         paint = new Paint();
         gameView = new ImageView(context);
+        blankBitmap2 = Bitmap.createBitmap(size.x,size.y,Bitmap.Config.ARGB_8888);
+        canvas2 = new Canvas(blankBitmap2);
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
@@ -49,6 +51,8 @@ class LogicSimulator{
     void draw(){
         gameView.setImageBitmap(blankBitmap);
         grid.drawGrid(canvas, paint);
+        gameView.setImageBitmap(blankBitmap2);
+        grid.drawGrid(canvas2, paint);
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````

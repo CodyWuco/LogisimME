@@ -7,11 +7,11 @@ class Transform {
     private int xClip;
     private boolean reversed = false;
 
-    //private PointF location;
+    private PointF location;
     private static PointF screenSize;
 
-    Transform(PointF screenSize) {
-        //location = startingLocation;
+    Transform(PointF startingLocation, PointF screenSize) {
+        location = startingLocation;
         this.screenSize = screenSize;
     }
 
@@ -31,9 +31,13 @@ class Transform {
         return reversed;
     }
 
-    PointF getScreenSize(){
-        return screenSize;
+    void setLocation(float horizontal, float vertical){
+        location = new PointF(horizontal, vertical);
     }
+
+    PointF getLocation()    {  return location; }
+
+    PointF getScreenSize()  {  return screenSize; }
 
 
 }
