@@ -24,6 +24,7 @@ import static android.content.Context.MODE_PRIVATE;
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class Grid implements Serializable {
     int gridWidth, gridHeight, blockSize;
+    int xOffset, yOffset;
     Random rand;
     int gridSize;
     AbstractGridCell selected, previousSelection, wireSource;
@@ -53,6 +54,8 @@ class Grid implements Serializable {
         blockSize = y / gridSize;
         gridWidth =  10;
         gridHeight = 10;
+        xOffset = 0;
+        yOffset = 0;
         rand = new Random();
         selected = null;
         previousSelection = null;
@@ -164,7 +167,7 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public int touchGrid(float touchX, float touchY){
-        // this if checks if the click was a block size away from the edge of the screen
+        // this "if" checks if the click was a block size away from the edge of the screen
         // this is done to get screen space to the hud layout
         if ( touchX > blockSize) {
             GridPosition tP = getGridTouchPosition(touchX, touchY);
@@ -185,7 +188,8 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public GridPosition getGridTouchPosition(float touchX, float touchY){
-        GridPosition tp = new GridPosition((int)touchX/ blockSize, (int)touchY/ blockSize);
+        GridPosition tp = new GridPosition((int)touchX + xOffset/ blockSize,
+                (int)touchY + yOffset/ blockSize);
         return tp;
     }
     //``````````````````````````````````````````````````````````````````````````````````````````````
