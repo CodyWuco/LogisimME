@@ -7,7 +7,7 @@ import android.graphics.PointF;
 
 interface GraphicsComponent {
 
-    void initialize(Context c, ObjectSpecific s, PointF screensize);
+    void initialize(Context c, ObjectSpecific s, PointF screenSize);
 
     void draw(Canvas canvas, Paint paint, Transform t);
 
