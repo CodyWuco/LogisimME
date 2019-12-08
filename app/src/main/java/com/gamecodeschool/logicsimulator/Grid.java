@@ -186,7 +186,7 @@ class Grid implements Serializable {
         }
         // this is the hud layout logic
         else {
-            GridPosition tP = getHudTouchPosition(touchX, touchY);
+            GridPosition tP = getGridTouchPosition(touchX, touchY);
             int currGridNum = gridCellN(tP);
             AbstractGridCell clickedCell = onClick(currGridNum);
             CellClickEvent(clickedCell, currGridNum);
@@ -198,11 +198,6 @@ class Grid implements Serializable {
     public GridPosition getGridTouchPosition(float touchX, float touchY){
         GridPosition tp = new GridPosition(((int)touchX + xOffset)/ blockSize,
                 ((int)touchY + yOffset)/ blockSize);
-        return tp;
-    }
-    //``````````````````````````````````````````````````````````````````````````````````````````````
-    public GridPosition getHudTouchPosition(float touchX, float touchY){
-        GridPosition tp = new GridPosition((int)touchX/ blockSize, (int)touchY/ blockSize);
         return tp;
     }
 
