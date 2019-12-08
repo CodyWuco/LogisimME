@@ -159,11 +159,11 @@ class Grid implements Serializable {
     private int gridCellN(GridPosition p){return (gridHeight*p.x+p.y);}
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    private int distanceToClosestFrom(GridPosition shotP){
+    private int distanceToClosestFrom(GridPosition shotP, Vector<AbstractGridCell> cells){
         int subD=gridWidth*gridHeight;
 
-        for(int i=0; i<gridCells.size(); i++){
-            AbstractGridCell agc = gridCells.get(1);
+        for(int i=0; i < cells.size(); i++){
+            AbstractGridCell agc = cells.get(1);
             if(agc instanceof LogicNode){
                 // set subD to existing min, or distance from agc to shotP
             }
@@ -175,6 +175,7 @@ class Grid implements Serializable {
     public int touchGrid(float touchX, float touchY){
         // reserves 3 grid blocks worth of space on the left for Ui logic
         int reservedUISpace = 3 * blockSize;
+
         // this "if" checks if the click was a block size away from the edge of the screen
         // this is done to get screen space to the hud layout
         if ( touchX > reservedUISpace) {
@@ -182,7 +183,7 @@ class Grid implements Serializable {
             int currGridNum = gridCellN(tP);
             AbstractGridCell clickedCell = onClick(currGridNum);
             CellClickEvent(clickedCell, currGridNum);
-            return distanceToClosestFrom(tP);
+            return distanceToClosestFrom(tP, gridCells);
         }
         // this is the hud layout logic
         else {
@@ -190,7 +191,7 @@ class Grid implements Serializable {
             int currGridNum = gridCellN(tP);
             AbstractGridCell clickedCell = onClick(currGridNum);
             CellClickEvent(clickedCell, currGridNum);
-            return distanceToClosestFrom(tP);
+            return distanceToClosestFrom(tP, hudCells);
         }
     }
 
