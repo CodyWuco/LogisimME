@@ -127,12 +127,18 @@ class Grid implements Serializable {
         addIconToHud(new ClearScreenIcon(gridCells.get(iconLocation(row,column))),row,column);
         row = 4 ; column = 1;
         addIconToHud(new CreateSaveIcon(gridCells.get(iconLocation(row,column))),row,column);
-        row = 5 ; column = 1;
-        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "A"),row,column);
         row = 0 ; column = 2;
-        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "B"),row,column);
+        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "A"),row,column);
         row = 1 ; column = 2;
+        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "B"),row,column);
+        row = 2 ; column = 2;
         addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "C"),row,column);
+        row = 3 ; column = 2;
+        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "D"),row,column);
+        row = 4 ; column = 2;
+        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "E"),row,column);
+        row = 5 ; column = 2;
+        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "F"),row,column);
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
