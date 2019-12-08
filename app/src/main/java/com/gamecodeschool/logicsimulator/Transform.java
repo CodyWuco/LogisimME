@@ -27,7 +27,7 @@ class Transform {
         reversed = !reversed;
     }
 
-    PointF getmScreenSize(){
+    PointF getScreenSize(){
         return screenSize;
     }
 
