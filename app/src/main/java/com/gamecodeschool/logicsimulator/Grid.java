@@ -240,8 +240,10 @@ class Grid implements Serializable {
     }
     private void refreshGrid(int xOffset, int yOffset){
         for(int h=0; h<gridWidth*gridHeight; h++){
-                gridCells.get(h).addOffsetX(xOffset*blockSize);
-                gridCells.get(h).addOffsetY(yOffset*blockSize);
+            // should be blocksize instead of and int if you want it to move seamlessly
+            // use smaller increments for visual effect
+                gridCells.get(h).addOffsetX(xOffset*10);
+                gridCells.get(h).addOffsetY(yOffset*10);
             }
     }
 
