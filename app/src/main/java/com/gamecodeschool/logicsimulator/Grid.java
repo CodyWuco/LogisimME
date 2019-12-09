@@ -182,16 +182,16 @@ class Grid implements Serializable {
             GridPosition tP = getGridTouchPosition(touchX, touchY);
             int currGridNum = gridCellN(tP);
             AbstractGridCell clickedCell = onClick(currGridNum, gridCells);
-            CellClickEvent(clickedCell, currGridNum, gridCells);
+            CellClickEvent(clickedCell, currGridNum);
             return distanceToClosestFrom(tP, gridCells);
         }
         // this is the hud layout logic
         else {
             GridPosition tP = getGridTouchPosition(touchX, touchY);
             int currGridNum = gridCellN(tP);
-            AbstractGridCell clickedCell = onClick(currGridNum, gridCells);
-            CellClickEvent(clickedCell, currGridNum, gridCells);
-            return distanceToClosestFrom(tP, gridCells);
+            AbstractGridCell clickedCell = onClick(currGridNum, hudCells);
+            CellClickEvent(clickedCell, currGridNum);
+            return distanceToClosestFrom(tP, hudCells);
         }
     }
 
@@ -208,10 +208,9 @@ class Grid implements Serializable {
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public void CellClickEvent(AbstractGridCell clickedCell, int currGridNum,
-                               Vector<AbstractGridCell> cells){
-        if (isEmptyCell(clickedCell)){ doEmptyCellEvent(clickedCell, currGridNum, cells); }
-        else if (isLogicNode(clickedCell)){ doLogicNodeEvent(clickedCell, currGridNum, cells);}
+    public void CellClickEvent(AbstractGridCell clickedCell, int currGridNum){
+        if (isEmptyCell(clickedCell)){ doEmptyCellEvent(clickedCell, currGridNum); }
+        else if (isLogicNode(clickedCell)){ doLogicNodeEvent(clickedCell, currGridNum);}
         else if (isSavesIcon(clickedCell)){ doSavesIconEvent(clickedCell, currGridNum);}
         else if (isClearScreenIconEvent(clickedCell)){doClearIconEvent(clickedCell, currGridNum);}
         else{ doSelectEvent(clickedCell);}
@@ -221,22 +220,20 @@ class Grid implements Serializable {
     public boolean isEmptyCell(AbstractGridCell cell){ return (cell instanceof EmptyGridCell); }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public void doEmptyCellEvent(AbstractGridCell clickedCell, int currGridNum,
-                                 Vector<AbstractGridCell> cells){
-        if(isLogicIcon(selected)){cells.set(currGridNum, selected.changeCellType(clickedCell));}
-        else { cells.set(currGridNum, clickedCell.selectObject()); }
+    public void doEmptyCellEvent(AbstractGridCell clickedCell, int currGridNum){
+        if(isLogicIcon(selected)){gridCells.set(currGridNum, selected.changeCellType(clickedCell));}
+        else { gridCells.set(currGridNum, clickedCell.selectObject()); }
 
         doSelectEvent(clickedCell);
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public void doLogicNodeEvent(AbstractGridCell clickedCell, int currGridNum,
-                                 Vector<AbstractGridCell> cells){
-        if(isDeleteIcon(selected)){ cells.set(currGridNum, clickedCell.clearShot()); }
+    public void doLogicNodeEvent(AbstractGridCell clickedCell, int currGridNum){
+        if(isDeleteIcon(selected)){ gridCells.set(currGridNum, clickedCell.clearShot()); }
         else if(isWireInputIcon(selected)){
             LogicNode tempNode = (LogicNode) clickedCell;
             tempNode.setInput((LogicNode) wireSource);
-            cells.set(currGridNum, tempNode);
+            gridCells.set(currGridNum, tempNode);
         }
         else if(isWireSourceIcon(selected)){
             wireSource = clickedCell; }
@@ -244,7 +241,7 @@ class Grid implements Serializable {
         else if(isClearInputIcon(selected)){
             LogicNode tempNode = (LogicNode) clickedCell;
             tempNode.clearInput();
-            cells.set(currGridNum, tempNode);
+            gridCells.set(currGridNum, tempNode);
             Log.d("Wire Source", "source");
         }
 
