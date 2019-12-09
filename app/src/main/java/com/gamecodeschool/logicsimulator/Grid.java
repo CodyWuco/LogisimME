@@ -229,13 +229,13 @@ class Grid implements Serializable {
 
     private void doOffsetArrowEvent(AbstractGridCell clickedCell, int currGridNum) {
         if( clickedCell instanceof OffsetRightIcon) {
-            xOffset--; refreshGrid(-1, 0);
-        } else if (clickedCell instanceof OffsetLeftIcon){
             xOffset++; refreshGrid(1, 0);
+        } else if (clickedCell instanceof OffsetLeftIcon){
+            xOffset--; refreshGrid(-1, 0);
         }else if (clickedCell instanceof OffsetUpIcon){
-            yOffset--; refreshGrid(0, -1);
+            yOffset++; refreshGrid(0, 1);
         }else if (clickedCell instanceof OffsetDownIcon){
-            xOffset++; refreshGrid(0, 1);
+            xOffset--; refreshGrid(0, -1);
         }
     }
     private void refreshGrid(int xOffset, int yOffset){
