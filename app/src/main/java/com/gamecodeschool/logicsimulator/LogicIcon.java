@@ -133,3 +133,13 @@ class ClearScreenIcon extends AbstractGridCell{
         drawText(canvas, paint, "Clear", "Screen");
     }
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class OffsetRightIcon extends AbstractGridCell{
+    public OffsetRightIcon(AbstractGridCell myCell)          {super(((myCell)));}
+    public void drawGrid(Canvas canvas, Paint paint){
+        super.drawGrid(canvas, paint, Color.DKGRAY);
+        paint.setColor(Color.GREEN);
+        drawText(canvas, paint, "-->", "Right");
+    }
+}
