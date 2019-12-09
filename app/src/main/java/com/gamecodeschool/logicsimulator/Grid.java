@@ -140,12 +140,6 @@ class Grid implements Serializable {
         addIconToHud(new SavesIcon(setHudCellLocation(row, column), "B"),row,column);
         row = 3 ; column = 2;
         addIconToHud(new SavesIcon(setHudCellLocation(row, column), "C"),row,column);
-        row = 3 ; column = 2;
-        //addIconToHud(new SavesIcon(setHudCellLocation(row, column), "D"),row,column);
-        row = 4 ; column = 2;
-        //addIconToHud(new SavesIcon(setHudCellLocation(row, column), "E"),row,column);
-        row = 5 ; column = 2;
-        //addIconToHud(new SavesIcon(setHudCellLocation(row, column), "F"),row,column);
         row = 5 ; column = 2;
         addIconToHud(new OffsetRightIcon(setHudCellLocation(row, column)),row,column);
         row = 5 ; column = 0;
