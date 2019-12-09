@@ -228,16 +228,24 @@ class Grid implements Serializable {
     }
 
     private void doOffsetArrowEvent(AbstractGridCell clickedCell, int currGridNum) {
-        xOffset--;
-        refreshGrid(-1,0);
+        if( clickedCell instanceof OffsetRightIcon) {
+            xOffset--; refreshGrid(-1, 0);
+        } else if (clickedCell instanceof OffsetLeftIcon){
+            xOffset++; refreshGrid(1, 0);
+        }else if (clickedCell instanceof OffsetUpIcon){
+            yOffset--; refreshGrid(0, -1);
+        }else if (clickedCell instanceof OffsetDownIcon){
+            xOffset++; refreshGrid(0, 1);
+        }
     }
     private void refreshGrid(int xOffset, int yOffset){
         for(int h=0; h<gridWidth*gridHeight; h++){
                 gridCells.get(h).addOffsetX(xOffset*blockSize);
+                gridCells.get(h).addOffsetY(yOffset*blockSize);
             }
     }
 
-    private boolean isOffsetArrowIcon(AbstractGridCell clickedCell) { return clickedCell instanceof OffsetRightIcon;}
+    private boolean isOffsetArrowIcon(AbstractGridCell clickedCell) { return clickedCell instanceof OffsetIcon;}
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public boolean isEmptyCell(AbstractGridCell cell){ return (cell instanceof EmptyGridCell); }
