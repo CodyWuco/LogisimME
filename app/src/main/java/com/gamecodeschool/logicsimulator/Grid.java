@@ -54,7 +54,7 @@ class Grid implements Serializable {
         blockSize = y / gridSize;
         gridWidth =  10;
         gridHeight = 10;
-        xOffset = 0;
+        xOffset = -1;
         yOffset = 0;
         rand = new Random();
         selected = null;
@@ -76,7 +76,7 @@ class Grid implements Serializable {
         gridCells = new Vector<>(10*10);
         for(int h=0; h<gridWidth*gridHeight; h++)
             for(int v=0; v<gridHeight; v++)
-                gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
+                gridCells.add((new EmptyGridCell(h*blockSize + xOffset*blockSize,v*blockSize, blockSize,
                         blockSize)));
 
 
