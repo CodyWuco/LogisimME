@@ -66,12 +66,20 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public void reset(){
-        gridCells = new Vector<>(10*10);
+        hudCells = new Vector<>(10*10); // set all to null to force hud touch priority to work
+        hudCells.clear();
+        for(int h=0; h<gridWidth*gridHeight; h++)
+            for(int v=0; v<gridHeight; v++)
+                hudCells.add((new NullGridCell(h*blockSize,v*blockSize, blockSize,
+                        blockSize)));
 
+        gridCells = new Vector<>(10*10);
         for(int h=0; h<gridWidth*gridHeight; h++)
             for(int v=0; v<gridHeight; v++)
                 gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
                         blockSize)));
+
+
         setUpHud();//remove this. this is only needed if the hud is on the grid
     }
 
@@ -103,7 +111,6 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
 
     public void setUpHud(){
-        hudCells = new Vector<>(10*10); // set all to null to force hud touch priority to work
         Log.i("hud", "BlockSize: " + blockSize);
         int row = 0, column = 0;
         addIconToHud(new SwitchIcon(new EmptyGridCell(0 * blockSize,0 * blockSize,blockSize, blockSize)),row,column);
@@ -182,7 +189,7 @@ class Grid implements Serializable {
         int currGridNum = gridCellN(tP);
 
         // checks if the hud has a button in that location before choosing which grid to proceed with
-        if ( hudCells.get(currGridNum) == null) {
+        if ( hudCells.get(currGridNum) instanceof NullGridCell) {
             AbstractGridCell clickedCell = onClick(currGridNum, gridCells);
             CellClickEvent(clickedCell, currGridNum);
             return distanceToClosestFrom(tP, gridCells);
