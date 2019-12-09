@@ -43,6 +43,15 @@ class EmptyGridCell extends AbstractGridCell{
     public AbstractGridCell selectObject()              {return this;}
 }
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class NullGridCell extends AbstractGridCell{
+    public NullGridCell(int x, int y,int w, int h)     {super(x, y, w, h);}
+    public NullGridCell(AbstractGridCell myCell)       {super(myCell);}
+    public AbstractGridCell selectObject()              {return this;}
+
+    public void drawGrid(Canvas canvas, Paint paint, int fillColor){}
+}
+
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class SwitchNode extends LogicNode{
