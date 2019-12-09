@@ -182,7 +182,7 @@ class Grid implements Serializable {
             GridPosition tP = getGridTouchPosition(touchX, touchY);
             int currGridNum = gridCellN(tP);
             AbstractGridCell clickedCell = onClick(currGridNum, gridCells);
-            CellClickEvent(clickedCell, currGridNum);
+            CellClickEvent(clickedCell, currGridNum, gridCells);
             return distanceToClosestFrom(tP, gridCells);
         }
         // this is the hud layout logic
@@ -190,7 +190,7 @@ class Grid implements Serializable {
             GridPosition tP = getGridTouchPosition(touchX, touchY);
             int currGridNum = gridCellN(tP);
             AbstractGridCell clickedCell = onClick(currGridNum, gridCells);
-            CellClickEvent(clickedCell, currGridNum);
+            CellClickEvent(clickedCell, currGridNum, gridCells);
             return distanceToClosestFrom(tP, gridCells);
         }
     }
@@ -208,7 +208,8 @@ class Grid implements Serializable {
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public void CellClickEvent(AbstractGridCell clickedCell, int currGridNum){
+    public void CellClickEvent(AbstractGridCell clickedCell, int currGridNum,
+                               Vector<AbstractGridCell> cells){
         if (isEmptyCell(clickedCell)){ doEmptyCellEvent(clickedCell, currGridNum); }
         else if (isLogicNode(clickedCell)){ doLogicNodeEvent(clickedCell, currGridNum);}
         else if (isSavesIcon(clickedCell)){ doSavesIconEvent(clickedCell, currGridNum);}
