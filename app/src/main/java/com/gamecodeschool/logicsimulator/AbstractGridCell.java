@@ -51,6 +51,9 @@ abstract class AbstractGridCell implements Serializable {
     public int getH() { return h; }
     public int getW() { return w; }
 
+    public void addOffsetX(int offset) { x += offset; }
+    public void addOffsetY(int offset) { y += offset; }
+
     public AbstractGridCell selectObject()              {return this;}
     public AbstractGridCell clearShot()                 {return this;}
     public AbstractGridCell changeCellType(AbstractGridCell myCell)

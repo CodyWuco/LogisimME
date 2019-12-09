@@ -76,8 +76,8 @@ class Grid implements Serializable {
         gridCells = new Vector<>(10*10);
         for(int h=0; h<gridWidth*gridHeight; h++)
             for(int v=0; v<gridHeight; v++)
-                gridCells.add((new EmptyGridCell(h*blockSize + xOffset*blockSize,
-                        v*blockSize + yOffset*blockSize, blockSize, blockSize)));
+                gridCells.add((new EmptyGridCell(h*blockSize ,
+                        v*blockSize, blockSize, blockSize)));
 
 
         setUpHud();//remove this. this is only needed if the hud is on the grid
@@ -151,7 +151,7 @@ class Grid implements Serializable {
     }
 
     private EmptyGridCell setHudCellLocation( int row, int column){
-        return new EmptyGridCell(column * blockSize+ xOffset*blockSize,row * blockSize,blockSize, blockSize);
+        return new EmptyGridCell(column * blockSize,row * blockSize,blockSize, blockSize);
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
@@ -207,8 +207,8 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public GridPosition getGridTouchPosition(float touchX, float touchY){
-        GridPosition tp = new GridPosition(((int)touchX + (xOffset))/ blockSize,
-                ((int)touchY + yOffset)/ blockSize);
+        GridPosition tp = new GridPosition(((int)touchX)/ blockSize,
+                ((int)touchY)/ blockSize);
         return tp;
     }
 
@@ -229,6 +229,13 @@ class Grid implements Serializable {
 
     private void doOffsetArrowEvent(AbstractGridCell clickedCell, int currGridNum) {
         xOffset--;
+        refreshGrid(-1,0);
+    }
+    private void refreshGrid(int xOffset, int yOffset){
+        for(int h=0; h<gridWidth*gridHeight; h++)
+            for(int v=0; v<gridHeight; v++) {
+            }
+        gridCells.get(50).addOffsetX(xOffset);
     }
 
     private boolean isOffsetArrowIcon(AbstractGridCell clickedCell) { return clickedCell instanceof OffsetRightIcon;}
