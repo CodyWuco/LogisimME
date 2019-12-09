@@ -54,7 +54,7 @@ class Grid implements Serializable {
         blockSize = y / gridSize;
         gridWidth =  10;
         gridHeight = 10;
-        xOffset = -9;
+        xOffset = 0;
         yOffset = 0;
         rand = new Random();
         selected = null;
@@ -210,7 +210,7 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public GridPosition getGridTouchPosition(float touchX, float touchY){
-        GridPosition tp = new GridPosition(((int)touchX + xOffset)/ blockSize,
+        GridPosition tp = new GridPosition(((int)touchX + (xOffset))/ blockSize,
                 ((int)touchY + yOffset)/ blockSize);
         return tp;
     }
