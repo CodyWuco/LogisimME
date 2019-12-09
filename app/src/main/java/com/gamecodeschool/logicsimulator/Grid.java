@@ -76,8 +76,8 @@ class Grid implements Serializable {
         gridCells = new Vector<>(10*10);
         for(int h=0; h<gridWidth*gridHeight; h++)
             for(int v=0; v<gridHeight; v++)
-                gridCells.add((new EmptyGridCell(h*blockSize+xOffset*blockSize,v*blockSize, blockSize,
-                        blockSize)));
+                gridCells.add((new EmptyGridCell(h*blockSize + xOffset*blockSize,
+                        v*blockSize + yOffset*blockSize, blockSize, blockSize)));
 
 
         setUpHud();//remove this. this is only needed if the hud is on the grid
@@ -186,9 +186,6 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public int touchGrid(float touchX, float touchY){
-        // reserves 3 grid blocks worth of space on the left for Ui logic
-        int reservedUISpace = 3 * blockSize;
-
         // this "if" checks if the click was a block size away from the edge of the screen
         // this is done to get screen space to the hud layout
         GridPosition tP = getGridTouchPosition(touchX, touchY);
