@@ -54,7 +54,7 @@ class Grid implements Serializable {
         blockSize = y / gridSize;
         gridWidth =  10;
         gridHeight = 10;
-        xOffset = -1;
+        xOffset = -9;
         yOffset = 0;
         rand = new Random();
         selected = null;
@@ -70,13 +70,13 @@ class Grid implements Serializable {
         hudCells.clear();
         for(int h=0; h<gridWidth*gridHeight; h++)
             for(int v=0; v<gridHeight; v++)
-                hudCells.add((new NullGridCell(h*blockSize,v*blockSize, blockSize,
+                hudCells.add((new NullGridCell(h*blockSize ,v*blockSize, blockSize,
                         blockSize)));
 
         gridCells = new Vector<>(10*10);
         for(int h=0; h<gridWidth*gridHeight; h++)
             for(int v=0; v<gridHeight; v++)
-                gridCells.add((new EmptyGridCell(h*blockSize + xOffset*blockSize,v*blockSize, blockSize,
+                gridCells.add((new EmptyGridCell(h*blockSize+xOffset*blockSize,v*blockSize, blockSize,
                         blockSize)));
 
 
@@ -113,41 +113,45 @@ class Grid implements Serializable {
     public void setUpHud(){
         Log.i("hud", "BlockSize: " + blockSize);
         int row = 0, column = 0;
-        addIconToHud(new SwitchIcon(new EmptyGridCell(0 * blockSize,0 * blockSize,blockSize, blockSize)),row,column);
+        addIconToHud(new SwitchIcon(setHudCellLocation(row, column)),row,column);
         row = 1; column = 0;
-        addIconToHud(new AndIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new AndIcon(setHudCellLocation(row, column)),row,column);
         row = 2 ; column = 0;
-        addIconToHud(new OrIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new OrIcon(setHudCellLocation(row, column)),row,column);
         row = 3 ; column = 0;
-        addIconToHud(new NotIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new NotIcon(setHudCellLocation(row, column)),row,column);
         row = 4 ; column = 0;
-        addIconToHud(new LightIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new LightIcon(setHudCellLocation(row, column)),row,column);
         row = 5 ; column = 0;
-        addIconToHud(new DeleteIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new DeleteIcon(setHudCellLocation(row, column)),row,column);
         row = 0 ; column = 1;
-        addIconToHud(new WireSourceIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new WireSourceIcon(setHudCellLocation(row, column)),row,column);
         row = 1 ; column = 1;
-        addIconToHud(new WireInputIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new WireInputIcon(setHudCellLocation(row, column)),row,column);
         row = 2 ; column = 1;
-        addIconToHud(new ClearInputIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new ClearInputIcon(setHudCellLocation(row, column)),row,column);
         row = 3 ; column = 1;
-        addIconToHud(new ClearScreenIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new ClearScreenIcon(setHudCellLocation(row, column)),row,column);
         row = 4 ; column = 1;
-        addIconToHud(new CreateSaveIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new CreateSaveIcon(setHudCellLocation(row, column)),row,column);
         row = 0 ; column = 2;
-        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "A"),row,column);
+        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "A"),row,column);
         row = 1 ; column = 2;
-        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "B"),row,column);
+        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "B"),row,column);
         row = 2 ; column = 2;
-        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "C"),row,column);
+        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "C"),row,column);
         row = 3 ; column = 2;
-        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "D"),row,column);
+        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "D"),row,column);
         row = 4 ; column = 2;
-        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "E"),row,column);
+        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "E"),row,column);
         row = 5 ; column = 2;
-        addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "F"),row,column);
+        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "F"),row,column);
         row = 3 ; column = 9;
-        addIconToHud(new OffsetRightIcon(gridCells.get(iconLocation(row,column))),row,column);
+        addIconToHud(new OffsetRightIcon(setHudCellLocation(row, column)),row,column);
+    }
+
+    private EmptyGridCell setHudCellLocation( int row, int column){
+        return new EmptyGridCell(column * blockSize,row * blockSize,blockSize, blockSize);
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
