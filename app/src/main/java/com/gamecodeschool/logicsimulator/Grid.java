@@ -122,7 +122,7 @@ class Grid implements Serializable {
         addIconToHud(new NotIcon(setHudCellLocation(row, column)),row,column);
         row = 4 ; column = 0;
         addIconToHud(new LightIcon(setHudCellLocation(row, column)),row,column);
-        row = 5 ; column = 0;
+        row = 4 ; column = 2;
         addIconToHud(new DeleteIcon(setHudCellLocation(row, column)),row,column);
         row = 0 ; column = 1;
         addIconToHud(new WireSourceIcon(setHudCellLocation(row, column)),row,column);
@@ -132,22 +132,28 @@ class Grid implements Serializable {
         addIconToHud(new ClearInputIcon(setHudCellLocation(row, column)),row,column);
         row = 3 ; column = 1;
         addIconToHud(new ClearScreenIcon(setHudCellLocation(row, column)),row,column);
-        row = 4 ; column = 1;
-        addIconToHud(new CreateSaveIcon(setHudCellLocation(row, column)),row,column);
         row = 0 ; column = 2;
-        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "A"),row,column);
+        addIconToHud(new CreateSaveIcon(setHudCellLocation(row, column)),row,column);
         row = 1 ; column = 2;
-        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "B"),row,column);
+        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "A"),row,column);
         row = 2 ; column = 2;
+        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "B"),row,column);
+        row = 3 ; column = 2;
         addIconToHud(new SavesIcon(setHudCellLocation(row, column), "C"),row,column);
         row = 3 ; column = 2;
-        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "D"),row,column);
+        //addIconToHud(new SavesIcon(setHudCellLocation(row, column), "D"),row,column);
         row = 4 ; column = 2;
-        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "E"),row,column);
+        //addIconToHud(new SavesIcon(setHudCellLocation(row, column), "E"),row,column);
         row = 5 ; column = 2;
-        addIconToHud(new SavesIcon(setHudCellLocation(row, column), "F"),row,column);
-        row = 3 ; column = 9;
+        //addIconToHud(new SavesIcon(setHudCellLocation(row, column), "F"),row,column);
+        row = 5 ; column = 2;
         addIconToHud(new OffsetRightIcon(setHudCellLocation(row, column)),row,column);
+        row = 5 ; column = 0;
+        addIconToHud(new OffsetLeftIcon(setHudCellLocation(row, column)),row,column);
+        row = 4 ; column = 1;
+        addIconToHud(new OffsetUpIcon(setHudCellLocation(row, column)),row,column);
+        row = 5 ; column = 1;
+        addIconToHud(new OffsetDownIcon(setHudCellLocation(row, column)),row,column);
     }
 
     private EmptyGridCell setHudCellLocation( int row, int column){
