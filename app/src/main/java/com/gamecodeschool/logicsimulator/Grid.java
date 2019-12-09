@@ -151,7 +151,7 @@ class Grid implements Serializable {
     }
 
     private EmptyGridCell setHudCellLocation( int row, int column){
-        return new EmptyGridCell(column * blockSize,row * blockSize,blockSize, blockSize);
+        return new EmptyGridCell(column * blockSize+ xOffset*blockSize,row * blockSize,blockSize, blockSize);
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
@@ -222,9 +222,16 @@ class Grid implements Serializable {
         if (isEmptyCell(clickedCell)){ doEmptyCellEvent(clickedCell, currGridNum); }
         else if (isLogicNode(clickedCell)){ doLogicNodeEvent(clickedCell, currGridNum);}
         else if (isSavesIcon(clickedCell)){ doSavesIconEvent(clickedCell, currGridNum);}
+        else if (isOffsetArrowIcon(clickedCell)){ doOffsetArrowEvent(clickedCell, currGridNum);}
         else if (isClearScreenIconEvent(clickedCell)){doClearIconEvent(clickedCell, currGridNum);}
         else{ doSelectEvent(clickedCell);}
     }
+
+    private void doOffsetArrowEvent(AbstractGridCell clickedCell, int currGridNum) {
+        xOffset--;
+    }
+
+    private boolean isOffsetArrowIcon(AbstractGridCell clickedCell) { return clickedCell instanceof OffsetRightIcon;}
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public boolean isEmptyCell(AbstractGridCell cell){ return (cell instanceof EmptyGridCell); }
