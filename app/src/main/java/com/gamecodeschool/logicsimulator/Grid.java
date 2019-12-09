@@ -232,10 +232,9 @@ class Grid implements Serializable {
         refreshGrid(-1,0);
     }
     private void refreshGrid(int xOffset, int yOffset){
-        for(int h=0; h<gridWidth*gridHeight; h++)
-            for(int v=0; v<gridHeight; v++) {
+        for(int h=0; h<gridWidth*gridHeight; h++){
+                gridCells.get(h).addOffsetX(xOffset*blockSize);
             }
-        gridCells.get(50).addOffsetX(xOffset);
     }
 
     private boolean isOffsetArrowIcon(AbstractGridCell clickedCell) { return clickedCell instanceof OffsetRightIcon;}

@@ -135,11 +135,44 @@ class ClearScreenIcon extends AbstractGridCell{
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class OffsetRightIcon extends AbstractGridCell{
+class OffsetIcon extends AbstractGridCell{
+    public OffsetIcon(AbstractGridCell myCell)               {super(((myCell)));}
+}
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class OffsetRightIcon extends OffsetIcon {
     public OffsetRightIcon(AbstractGridCell myCell)          {super(((myCell)));}
-    public void drawGrid(Canvas canvas, Paint paint){
+    public void drawGrid(Canvas canvas, Paint paint) {
         super.drawGrid(canvas, paint, Color.DKGRAY);
         paint.setColor(Color.GREEN);
         drawText(canvas, paint, "-->", "Right");
+    }
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class OffsetLeftIcon extends OffsetIcon {
+    public OffsetLeftIcon(AbstractGridCell myCell)          {super(((myCell)));}
+    public void drawGrid(Canvas canvas, Paint paint) {
+        super.drawGrid(canvas, paint, Color.DKGRAY);
+        paint.setColor(Color.GREEN);
+        drawText(canvas, paint, "<--", "Left");
+    }
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class OffsetUpIcon extends OffsetIcon {
+    public OffsetUpIcon(AbstractGridCell myCell)          {super(((myCell)));}
+    public void drawGrid(Canvas canvas, Paint paint) {
+        super.drawGrid(canvas, paint, Color.DKGRAY);
+        paint.setColor(Color.GREEN);
+        drawText(canvas, paint, "^", "Up");
+    }
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class OffsetDownIcon extends OffsetIcon {
+    public OffsetDownIcon(AbstractGridCell myCell)          {super(((myCell)));}
+    public void drawGrid(Canvas canvas, Paint paint) {
+        super.drawGrid(canvas, paint, Color.DKGRAY);
+        paint.setColor(Color.GREEN);
+        drawText(canvas, paint, "V", "Down");
     }
 }
