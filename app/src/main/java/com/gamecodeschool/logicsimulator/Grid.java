@@ -211,7 +211,7 @@ class Grid implements Serializable {
     public void CellClickEvent(AbstractGridCell clickedCell, int currGridNum,
                                Vector<AbstractGridCell> cells){
         if (isEmptyCell(clickedCell)){ doEmptyCellEvent(clickedCell, currGridNum, cells); }
-        else if (isLogicNode(clickedCell)){ doLogicNodeEvent(clickedCell, currGridNum);}
+        else if (isLogicNode(clickedCell)){ doLogicNodeEvent(clickedCell, currGridNum, cells);}
         else if (isSavesIcon(clickedCell)){ doSavesIconEvent(clickedCell, currGridNum);}
         else if (isClearScreenIconEvent(clickedCell)){doClearIconEvent(clickedCell, currGridNum);}
         else{ doSelectEvent(clickedCell);}
@@ -230,12 +230,13 @@ class Grid implements Serializable {
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public void doLogicNodeEvent(AbstractGridCell clickedCell, int currGridNum){
-        if(isDeleteIcon(selected)){ gridCells.set(currGridNum, clickedCell.clearShot()); }
+    public void doLogicNodeEvent(AbstractGridCell clickedCell, int currGridNum,
+                                 Vector<AbstractGridCell> cells){
+        if(isDeleteIcon(selected)){ cells.set(currGridNum, clickedCell.clearShot()); }
         else if(isWireInputIcon(selected)){
             LogicNode tempNode = (LogicNode) clickedCell;
             tempNode.setInput((LogicNode) wireSource);
-            gridCells.set(currGridNum, tempNode);
+            cells.set(currGridNum, tempNode);
         }
         else if(isWireSourceIcon(selected)){
             wireSource = clickedCell; }
@@ -243,7 +244,7 @@ class Grid implements Serializable {
         else if(isClearInputIcon(selected)){
             LogicNode tempNode = (LogicNode) clickedCell;
             tempNode.clearInput();
-            gridCells.set(currGridNum, tempNode);
+            cells.set(currGridNum, tempNode);
             Log.d("Wire Source", "source");
         }
 
