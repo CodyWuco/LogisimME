@@ -146,6 +146,8 @@ class Grid implements Serializable {
         addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "E"),row,column);
         row = 5 ; column = 2;
         addIconToHud(new SavesIcon(gridCells.get(iconLocation(row,column)), "F"),row,column);
+        row = 3 ; column = 9;
+        addIconToHud(new OffsetRightIcon(gridCells.get(iconLocation(row,column))),row,column);
     }
 
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
