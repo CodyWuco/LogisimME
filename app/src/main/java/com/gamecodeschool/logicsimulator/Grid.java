@@ -67,12 +67,6 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public void reset(){
         gridCells = new Vector<>(10*10);
-        hudCells = new Vector<>(10*10);
-
-        for(int h=0; h<gridWidth*gridHeight; h++)
-            for(int v=0; v<gridHeight; v++)
-                gridCells.add((new EmptyGridCell(h*blockSize,v*blockSize, blockSize,
-                        blockSize)));
 
         for(int h=0; h<gridWidth*gridHeight; h++)
             for(int v=0; v<gridHeight; v++)
@@ -109,6 +103,7 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
 
     public void setUpHud(){
+        hudCells = new Vector<>(10*10); // set all to null to force hud touch priority to work
         Log.i("hud", "BlockSize: " + blockSize);
         int row = 0, column = 0;
         addIconToHud(new SwitchIcon(new EmptyGridCell(0 * blockSize,0 * blockSize,blockSize, blockSize)),row,column);
@@ -183,17 +178,17 @@ class Grid implements Serializable {
 
         // this "if" checks if the click was a block size away from the edge of the screen
         // this is done to get screen space to the hud layout
-        if ( touchX > reservedUISpace) {
-            GridPosition tP = getGridTouchPosition(touchX, touchY);
-            int currGridNum = gridCellN(tP);
+        GridPosition tP = getGridTouchPosition(touchX, touchY);
+        int currGridNum = gridCellN(tP);
+
+        // checks if the hud has a button in that location before choosing which grid to proceed with
+        if ( hudCells.get(currGridNum) == null) {
             AbstractGridCell clickedCell = onClick(currGridNum, gridCells);
             CellClickEvent(clickedCell, currGridNum);
             return distanceToClosestFrom(tP, gridCells);
         }
         // this is the hud layout logic
         else {
-            GridPosition tP = getGridTouchPosition(touchX, touchY);
-            int currGridNum = gridCellN(tP);
             AbstractGridCell clickedCell = onClick(currGridNum, hudCells);
             CellClickEvent(clickedCell, currGridNum);
             return distanceToClosestFrom(tP, hudCells);
