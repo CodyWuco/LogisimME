@@ -181,7 +181,7 @@ class Grid implements Serializable {
         if ( touchX > reservedUISpace) {
             GridPosition tP = getGridTouchPosition(touchX, touchY);
             int currGridNum = gridCellN(tP);
-            AbstractGridCell clickedCell = onClick(currGridNum);
+            AbstractGridCell clickedCell = onClick(currGridNum, gridCells);
             CellClickEvent(clickedCell, currGridNum);
             return distanceToClosestFrom(tP, gridCells);
         }
@@ -189,9 +189,9 @@ class Grid implements Serializable {
         else {
             GridPosition tP = getGridTouchPosition(touchX, touchY);
             int currGridNum = gridCellN(tP);
-            AbstractGridCell clickedCell = onClick(currGridNum);
+            AbstractGridCell clickedCell = onClick(currGridNum, gridCells);
             CellClickEvent(clickedCell, currGridNum);
-            return distanceToClosestFrom(tP, hudCells);
+            return distanceToClosestFrom(tP, gridCells);
         }
     }
 
@@ -203,7 +203,9 @@ class Grid implements Serializable {
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public AbstractGridCell onClick(int cellNumber){ return gridCells.get(cellNumber); }
+    public AbstractGridCell onClick(int cellNumber, Vector<AbstractGridCell> cells){
+        return cells.get(cellNumber);
+    }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public void CellClickEvent(AbstractGridCell clickedCell, int currGridNum){
