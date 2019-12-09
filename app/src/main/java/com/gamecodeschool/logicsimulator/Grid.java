@@ -210,7 +210,7 @@ class Grid implements Serializable {
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public void CellClickEvent(AbstractGridCell clickedCell, int currGridNum,
                                Vector<AbstractGridCell> cells){
-        if (isEmptyCell(clickedCell)){ doEmptyCellEvent(clickedCell, currGridNum); }
+        if (isEmptyCell(clickedCell)){ doEmptyCellEvent(clickedCell, currGridNum, cells); }
         else if (isLogicNode(clickedCell)){ doLogicNodeEvent(clickedCell, currGridNum);}
         else if (isSavesIcon(clickedCell)){ doSavesIconEvent(clickedCell, currGridNum);}
         else if (isClearScreenIconEvent(clickedCell)){doClearIconEvent(clickedCell, currGridNum);}
@@ -221,9 +221,10 @@ class Grid implements Serializable {
     public boolean isEmptyCell(AbstractGridCell cell){ return (cell instanceof EmptyGridCell); }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public void doEmptyCellEvent(AbstractGridCell clickedCell, int currGridNum){
-        if(isLogicIcon(selected)){gridCells.set(currGridNum, selected.changeCellType(clickedCell));}
-        else { gridCells.set(currGridNum, clickedCell.selectObject()); }
+    public void doEmptyCellEvent(AbstractGridCell clickedCell, int currGridNum,
+                                 Vector<AbstractGridCell> cells){
+        if(isLogicIcon(selected)){cells.set(currGridNum, selected.changeCellType(clickedCell));}
+        else { cells.set(currGridNum, clickedCell.selectObject()); }
 
         doSelectEvent(clickedCell);
     }
