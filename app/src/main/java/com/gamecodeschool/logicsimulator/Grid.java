@@ -194,6 +194,8 @@ class Grid implements Serializable {
 
         // checks if the hud has a button in that location before choosing which grid to proceed with
         if ( hudCells.get(currGridNum) instanceof NullGridCell) {
+            tP = getGridTouchPosition(touchX+ xOffset*moveSpeed, touchY+ yOffset*moveSpeed);
+            currGridNum = gridCellN(tP);
             AbstractGridCell clickedCell = onClick(currGridNum, gridCells);
             CellClickEvent(clickedCell, currGridNum);
             return distanceToClosestFrom(tP, gridCells);
@@ -207,15 +209,8 @@ class Grid implements Serializable {
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public GridPosition hudgetGridTouchPosition(float touchX, float touchY){
-        GridPosition tp = new GridPosition((((int)touchX)/ blockSize,
-                (((int)touchY)+ yOffset * moveSpeed)/ blockSize);
-        return tp;
-    }
-
-    //``````````````````````````````````````````````````````````````````````````````````````````````
     public GridPosition getGridTouchPosition(float touchX, float touchY){
-        GridPosition tp = new GridPosition((((int)touchX)+ xOffset*moveSpeed)/ blockSize,
+        GridPosition tp = new GridPosition(((int)touchX)/ blockSize,
                 (((int)touchY)+ yOffset * moveSpeed)/ blockSize);
         return tp;
     }
