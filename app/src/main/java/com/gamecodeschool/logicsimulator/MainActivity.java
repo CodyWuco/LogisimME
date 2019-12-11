@@ -15,6 +15,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
@@ -91,10 +92,12 @@ public class MainActivity extends Activity {
         setContentView(game.gameView);
     }*/
 
-    protected void onCreate(Bundle savedInstanceState) {          //80-98-107
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.horizontal_layout);
         getScreenRes();
+        MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.rocky);
+        mediaPlayer.start();
         game = new LogicSimulator(this, size);
         setContentView(game.gameView);
 
