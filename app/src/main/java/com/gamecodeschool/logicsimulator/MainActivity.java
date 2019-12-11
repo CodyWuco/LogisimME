@@ -9,13 +9,16 @@ package com.gamecodeschool.logicsimulator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -73,6 +76,9 @@ public class MainActivity extends Activity {
     Display display;
     Point size;
 
+    //private static int SPLASH_TIME_OUT = 3000;
+
+
     /*//@Override
     protected void onCreate1(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,21 +88,35 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        BackgroundGraphicsComponent bs;
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        game = new LogicSimulator(this, size);
+        game = new bs;//LogicSimulator(this, size);
         setContentView(game.gameView);
     }*/
 
-    protected void onCreate(Bundle savedInstanceState) {          //80-98-107
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.horizontal_layout);
+        //setContentView(R.layout.activity_main);
+
         getScreenRes();
+        MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.rocky);
+        mediaPlayer.start();
+
         game = new LogicSimulator(this, size);
         setContentView(game.gameView);
 
         //game.Load("Quick Save");
+        /*new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run(){
+                Intent homeIntent = new Intent(MainActivity.this, WelcomeActivity.class);
+                startActivity(homeIntent);
+                finish();
+            }
+        },SPLASH_TIME_OUT);*/
+
     }
 
     // Get the current device's screen resolution

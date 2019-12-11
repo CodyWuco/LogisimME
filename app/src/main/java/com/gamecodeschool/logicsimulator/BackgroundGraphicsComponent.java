@@ -19,7 +19,7 @@ class BackgroundGraphicsComponent implements GraphicsComponent {
         // Make a resource id out of the string of the file name
         int resID = c.getResources()
                 .getIdentifier(s.getBitmapName(),
-                        "id",
+                        "background",
                         c.getPackageName());
 
         // Load the bitmap using the id
@@ -54,7 +54,7 @@ class BackgroundGraphicsComponent implements GraphicsComponent {
         Rect fromRect1 = new Rect(0, 0, width - xClip, height);
         Rect toRect1 = new Rect(xClip, startY, width, endY);
 
-        // For the reversed background
+        // For the reversed background/grid
         Rect fromRect2 = new Rect(width - xClip, 0, width, height);
         Rect toRect2 = new Rect(0, startY, xClip, endY);
 

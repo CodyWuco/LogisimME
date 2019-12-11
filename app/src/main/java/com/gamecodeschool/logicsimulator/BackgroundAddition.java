@@ -8,8 +8,7 @@ class BackgroundAddition extends ObjectSpecific {
     private static final PointF relativeScale = new PointF(1f,1f);
     private static final String[] components = new String [] {
             "BackgroundGraphicsComponent",
-            "BackgroundMovementComponent",
-            "BackgroundSpawnComponent"};
+            "BackgroundMovementComponent"};
 
     BackgroundAddition() {
         super(bitmapName, relativeScale, components);

@@ -6,9 +6,12 @@ package com.gamecodeschool.logicsimulator;
 //
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.Log;
+import android.widget.ImageView;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -30,6 +33,10 @@ class Grid implements Serializable {
     AbstractGridCell selected, previousSelection, wireSource;
     Context context;
     AbstractGridCellSaves saves;
+
+    Bitmap bitmap;
+    Context context1;
+
 
     private class GridPosition{
         int x,y;
@@ -111,6 +118,7 @@ class Grid implements Serializable {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
 
+
     public void setUpHud(){
         Log.i("hud", "BlockSize: " + blockSize);
         int row = 0, column = 0;
@@ -158,6 +166,13 @@ class Grid implements Serializable {
     public void addIconToHud(AbstractGridCell Icon, int row, int column){
         // used to take hud off of the grid
         hudCells.set(iconLocation(row,column), Icon);
+    }
+
+    public void addImages(Context context, ImageView view) {
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.switchbutton);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.or);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.not);
+        //image -> bitmap -> canvas -> ImageView
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````

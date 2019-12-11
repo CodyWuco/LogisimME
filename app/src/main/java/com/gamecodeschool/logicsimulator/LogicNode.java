@@ -1,10 +1,14 @@
 package com.gamecodeschool.logicsimulator;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.widget.ImageView;
 
 import java.util.Vector;
 
@@ -57,6 +61,8 @@ class NullGridCell extends AbstractGridCell{
 class SwitchNode extends LogicNode{
     boolean state;
     String statestr;
+    //Context context;//
+
     public SwitchNode(AbstractGridCell myCell){
         super((myCell)); this.state = false; this.statestr = "OFF";
     }
@@ -76,18 +82,41 @@ class SwitchNode extends LogicNode{
         super.drawGrid(canvas, paint, Color.GRAY);
         paint.setColor(Color.BLACK);
         drawText(canvas, paint, "Switch", statestr);
+
+        /*ImageView imageView = new ImageView(context);
+        Bitmap bit1 = BitmapFactory.decodeResource(context.getResources(), R.drawable.switchbutton);
+        //ImageView iv = (ImageView)findViewById(R.id.image_view);
+
+        Bitmap bitmap = Bitmap.createBitmap(bit1.getWidth(), bit1.getHeight(), Bitmap.Config.RGB_565);
+
+        canvas = new Canvas(bitmap);
+        canvas.drawBitmap(bit1,0,0 , null);
+        imageView.setImageBitmap(bitmap);*/
+
+        //ImageView iv = new ImageView(bit1);
+        //iv.draw(canvas);
+        //canvas.drawBitmap(bit1,leftOffst, topOffset, null(Paint));
+        //imageView.setImageBitmap(bitmap);
     }
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-class AndNode extends LogicNode{
+class AndNode extends LogicNode {
     String str;
-    public AndNode(AbstractGridCell myCell){super((myCell)); str= ""; }
-    public boolean eval(){
+
+    public AndNode(AbstractGridCell myCell) {
+        super((myCell));
+        str = "";
+    }
+
+    public boolean eval() {
         if (inputA != null & inputB != null) {
             return inputA.eval() & inputB.eval();
-        }else{ return false; }
+        } else {
+            return false;
+        }
     }
+
     public AbstractGridCell clearShot()                 {return new EmptyGridCell(this);}
 
     public void drawGrid(Canvas canvas, Paint paint) {
