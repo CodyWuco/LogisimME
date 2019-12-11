@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
     Display display;
     Point size;
 
-    private static int SPLASH_TIME_OUT = 4000;
+    //private static int SPLASH_TIME_OUT = 3000;
 
 
     /*//@Override
@@ -98,23 +98,24 @@ public class MainActivity extends Activity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.horizontal_layout);
-        getScreenRes();
+        //setContentView(R.layout.activity_main);
+
         MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.rocky);
         mediaPlayer.start();
-
-        game = new LogicSimulator(this, size);
-        setContentView(game.gameView);
-
-        //game.Load("Quick Save");
-        new Handler().postDelayed(new Runnable() {
+        getScreenRes();
+        /*new Handler().postDelayed(new Runnable() {
             @Override
             public void run(){
                 Intent homeIntent = new Intent(MainActivity.this, WelcomeActivity.class);
                 startActivity(homeIntent);
                 finish();
             }
-        },SPLASH_TIME_OUT);
+        },SPLASH_TIME_OUT);*/
+        game = new LogicSimulator(this, size);
+        setContentView(game.gameView);
+
+        //game.Load("Quick Save");
+
     }
 
     // Get the current device's screen resolution

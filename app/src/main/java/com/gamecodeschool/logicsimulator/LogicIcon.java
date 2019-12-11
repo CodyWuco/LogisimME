@@ -17,7 +17,9 @@ abstract class LogicIcon extends AbstractGridCell{
 class SwitchIcon extends LogicIcon{
     boolean isSelected;
     Context context;
+
     public SwitchIcon(AbstractGridCell myCell)          {super((myCell)); isSelected = false;}
+
     public void drawGrid(Canvas canvas, Paint paint) {
         super.drawGrid(canvas,paint, Color.DKGRAY);
         paint.setColor(Color.GREEN);
