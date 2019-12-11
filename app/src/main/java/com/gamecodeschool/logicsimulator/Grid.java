@@ -24,7 +24,7 @@ import static android.content.Context.MODE_PRIVATE;
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class Grid implements Serializable {
     int gridWidth, gridHeight, blockSize;
-    int xOffset, yOffset;
+    int xOffset, yOffset, moveSpeed;
     Random rand;
     int gridSize;
     AbstractGridCell selected, previousSelection, wireSource;
@@ -56,6 +56,7 @@ class Grid implements Serializable {
         gridHeight = 10;
         xOffset = 0;
         yOffset = 0;
+        moveSpeed = 10;
         rand = new Random();
         selected = null;
         previousSelection = null;
@@ -206,12 +207,18 @@ class Grid implements Serializable {
     }
 
     //``````````````````````````````````````````````````````````````````````````````````````````````
-    public GridPosition getGridTouchPosition(float touchX, float touchY){
-        GridPosition tp = new GridPosition(((int)touchX)/ blockSize,
-                ((int)touchY)/ blockSize);
+    public GridPosition hudgetGridTouchPosition(float touchX, float touchY){
+        GridPosition tp = new GridPosition((((int)touchX)/ blockSize,
+                (((int)touchY)+ yOffset * moveSpeed)/ blockSize);
         return tp;
     }
 
+    //``````````````````````````````````````````````````````````````````````````````````````````````
+    public GridPosition getGridTouchPosition(float touchX, float touchY){
+        GridPosition tp = new GridPosition((((int)touchX)+ xOffset*moveSpeed)/ blockSize,
+                (((int)touchY)+ yOffset * moveSpeed)/ blockSize);
+        return tp;
+    }
     //``````````````````````````````````````````````````````````````````````````````````````````````
     public AbstractGridCell onClick(int cellNumber, Vector<AbstractGridCell> cells){
         return cells.get(cellNumber);
@@ -242,8 +249,8 @@ class Grid implements Serializable {
         for(int h=0; h<gridWidth*gridHeight; h++){
             // should be blocksize instead of and int if you want it to move seamlessly
             // use smaller increments for visual effect
-                gridCells.get(h).addOffsetX(xOffset*10);
-                gridCells.get(h).addOffsetY(yOffset*10);
+                gridCells.get(h).addOffsetX(xOffset*moveSpeed);
+                gridCells.get(h).addOffsetY(yOffset*moveSpeed);
             }
     }
 
