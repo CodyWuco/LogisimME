@@ -100,9 +100,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
 
+        getScreenRes();
         MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.rocky);
         mediaPlayer.start();
-        getScreenRes();
+
+        game = new LogicSimulator(this, size);
+        setContentView(game.gameView);
+
+        //game.Load("Quick Save");
         /*new Handler().postDelayed(new Runnable() {
             @Override
             public void run(){
@@ -111,10 +116,6 @@ public class MainActivity extends Activity {
                 finish();
             }
         },SPLASH_TIME_OUT);*/
-        game = new LogicSimulator(this, size);
-        setContentView(game.gameView);
-
-        //game.Load("Quick Save");
 
     }
 
