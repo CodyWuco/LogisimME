@@ -9,6 +9,7 @@ package com.gamecodeschool.logicsimulator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -17,6 +18,7 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -74,6 +76,8 @@ public class MainActivity extends Activity {
     Display display;
     Point size;
 
+    private static int SPLASH_TIME_OUT = 4000;
+
 
     /*//@Override
     protected void onCreate1(Bundle savedInstanceState) {
@@ -98,10 +102,19 @@ public class MainActivity extends Activity {
         getScreenRes();
         MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this,R.raw.rocky);
         mediaPlayer.start();
+
         game = new LogicSimulator(this, size);
         setContentView(game.gameView);
 
         //game.Load("Quick Save");
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run(){
+                Intent homeIntent = new Intent(MainActivity.this, WelcomeActivity.class);
+                startActivity(homeIntent);
+                finish();
+            }
+        },SPLASH_TIME_OUT);
     }
 
     // Get the current device's screen resolution
