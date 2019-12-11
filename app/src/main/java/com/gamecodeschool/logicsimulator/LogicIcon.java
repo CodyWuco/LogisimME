@@ -1,8 +1,12 @@
 package com.gamecodeschool.logicsimulator;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.widget.ImageView;
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //  used in selection to determine action type
@@ -12,11 +16,32 @@ abstract class LogicIcon extends AbstractGridCell{
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class SwitchIcon extends LogicIcon{
     boolean isSelected;
+    Context context;
     public SwitchIcon(AbstractGridCell myCell)          {super((myCell)); isSelected = false;}
-    public void drawGrid(Canvas canvas, Paint paint){
+    public void drawGrid(Canvas canvas, Paint paint) {
         super.drawGrid(canvas,paint, Color.DKGRAY);
         paint.setColor(Color.GREEN);
         drawText(canvas, paint, "Switch", "");
+        //ImageView imageView = new ImageView(context);
+        //Bitmap bit1 = BitmapFactory.decodeResource(context.getResources(), R.drawable.switchbutton);
+        //ImageView iv = (ImageView)findViewById(R.id.image_view);
+        //switchImage(canvas);
+        //Bitmap bitmap = Bitmap.createBitmap(bit1.getWidth(), bit1.getHeight(), Bitmap.Config.RGB_565);
+
+        //canvas = new Canvas(bitmap);
+        //canvas.drawBitmap(bit1,0,0 , null);
+        //imageView.setImageBitmap(bitmap); //L
+    }
+    void switchImage(Canvas canvas) {
+        //ImageView imageView = new ImageView(context);
+        Bitmap bit1 = BitmapFactory.decodeResource(context.getResources(), R.drawable.switchbutton);
+        //ImageView iv = (ImageView)findViewById(R.id.image_view);
+
+        //Bitmap bitmap = Bitmap.createBitmap(bit1.getWidth(), bit1.getHeight(), Bitmap.Config.RGB_565);
+
+        //canvas = new Canvas(bitmap);
+        canvas.drawBitmap(bit1,0,0 , null);
+        //imageView.setImageBitmap(bitmap); //L
     }
     public AbstractGridCell changeCellType(AbstractGridCell myCell) {return new SwitchNode(myCell);}
 }

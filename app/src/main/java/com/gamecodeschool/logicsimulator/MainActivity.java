@@ -73,6 +73,7 @@ public class MainActivity extends Activity {
     Display display;
     Point size;
 
+
     /*//@Override
     protected void onCreate1(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,10 +83,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        BackgroundGraphicsComponent bs;
         Display display = getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        game = new LogicSimulator(this, size);
+        game = new bs;//LogicSimulator(this, size);
         setContentView(game.gameView);
     }*/
 
