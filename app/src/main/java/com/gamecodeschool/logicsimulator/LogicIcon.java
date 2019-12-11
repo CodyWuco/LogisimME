@@ -22,15 +22,7 @@ class SwitchIcon extends LogicIcon{
         super.drawGrid(canvas,paint, Color.DKGRAY);
         paint.setColor(Color.GREEN);
         drawText(canvas, paint, "Switch", "");
-        //ImageView imageView = new ImageView(context);
-        //Bitmap bit1 = BitmapFactory.decodeResource(context.getResources(), R.drawable.switchbutton);
-        //ImageView iv = (ImageView)findViewById(R.id.image_view);
         //switchImage(canvas);
-        //Bitmap bitmap = Bitmap.createBitmap(bit1.getWidth(), bit1.getHeight(), Bitmap.Config.RGB_565);
-
-        //canvas = new Canvas(bitmap);
-        //canvas.drawBitmap(bit1,0,0 , null);
-        //imageView.setImageBitmap(bitmap); //L
     }
     void switchImage(Canvas canvas) {
         //ImageView imageView = new ImageView(context);
