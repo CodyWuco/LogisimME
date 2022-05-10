@@ -1,0 +1,1146 @@
+commit eb08f9f9fe2079e2432dc3711bda1d34e0609c6c
+Merge: 7e9cdcb 258e37c
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 11 06:28:48 2019 -0800
+
+    Merge https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 7e9cdcba9134634bdfbbd57cd84e520d1522f34f
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 11 06:28:42 2019 -0800
+
+    Inverted offset. The offsets were moving the touch in the wrong directions.
+
+commit f99dcc94a839d82565de682fd0f76633ea03342e
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 11 06:27:52 2019 -0800
+
+    Removed get second get grid touch, and passed offset through parameters.
+
+commit 0be9ba38c4b6c6ac98b7d1c7c95723d6453d9cd0
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 11 06:26:31 2019 -0800
+
+    Testing a fix for the offset touch not changing positions correctly. added second getGridTouch
+
+commit 258e37cf1ae11ea0e4b86bc49141057e83ab2c5a
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 11 05:41:50 2019 -0800
+
+    Sound fixed, it was kinda crashing before randomly. Readjusted the code a bit.
+
+commit 51ca6a710523c1fb550a6408c1c564e091953f11
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 11 05:28:56 2019 -0800
+
+    Commented out the code for wecome screen. didn't function properly.
+
+commit 3d33b17cc2624b3393070a8ed3c594bab818fab5
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 11 05:07:09 2019 -0800
+
+    Added the welcome screen in the main xml file.
+
+commit c7bfc411a97d5d98036b58da3b8a234eb80b0e7d
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 11 04:26:46 2019 -0800
+
+    A class added 'WelcomeAcivity'.
+
+commit eb7f1daa24033d7d2e7ef0edb7369642dc51c832
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 11 04:09:49 2019 -0800
+
+    A music intro added and plays when the app starts.
+
+commit 19a03ea4f2e6c291a75aff6b4dbf65ae3335bb5b
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 11 03:42:08 2019 -0800
+
+    Added a mp3 file in res/raw folder.
+
+commit 898e6618936fa557f486ba1648cb9e90404cacf1
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 11 03:17:10 2019 -0800
+
+    Added code for adding the switch image under the switchImage in LogicIcon.java. Doesn't quite work yet.
+
+commit 6a5644fe8a6542319ba22793592649a1b86acbba
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 19:20:19 2019 -0800
+
+    Inverted controls to make it seem like the user is moving over the grid instead of moving the grid itself.
+
+commit 261c3af9af08548c1f6b070e491b65bb7a2a72df
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 19:17:59 2019 -0800
+
+    Changed arrow key offset multiplier to 10 instead of blocksize
+
+commit 552e7c67aaf83b8b293bf6d4e8f5eb193be37b78
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 19:13:14 2019 -0800
+
+    Added offset arrow's logic.
+
+commit 81ded7efbed65a192d197ef4734bca9933457fe0
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 19:06:04 2019 -0800
+
+    Removed the 3 unused saves.
+
+commit 8cf809831b275400432c8e5027867b87a4b9c6ac
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 19:05:29 2019 -0800
+
+    Added up, down, and left arrows to the Hud, and rearanged it.
+
+commit 9070a9b8b5252dcc83c8141aee282f325b6dde3c
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 19:00:45 2019 -0800
+
+    created an Offset base class and up, down, and left offset classed,
+
+commit fb5a27975363ce91ad7eb2d1609c13d89d18f428
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 18:52:07 2019 -0800
+
+    Removed offset from touch. It doesn't work, and is getting in the way of testing.
+
+commit 42db2f5f105b99ba839d6bd12003a08acc0b7069
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 18:32:59 2019 -0800
+
+    Added test code for offset arrow icon.
+
+commit 495a13ceb7c5e1dac2d0199166d053384e9383ea
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 18:25:23 2019 -0800
+
+    Added y offset to grid, and removed the reserved screen space variable.
+
+commit a37b6b12310df9568d5e5e13fc440479afddb69c
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 18:20:25 2019 -0800
+
+    Commenting out and changing variables to remove the offsets effects, so I can make a push.
+
+commit 6c083607097396d04fa1869b360f6092d287b68e
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 18:14:27 2019 -0800
+
+    Changed method that set location of hud icons to no longer use gridCells locations.
+
+commit db58e055151c4c468239b310c16bc01d436d2a3a
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 17:54:08 2019 -0800
+
+    testing Offset feature.
+
+commit 220d0b5b19f1a6665f109b44626a776f5006086c
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 17:53:48 2019 -0800
+
+    Put a right arrow icon on the hud layer.
+
+commit 78f3643e0f08da67e1c7e92012cff3617710cf07
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 17:53:19 2019 -0800
+
+    Added a right arrow icon.
+
+commit 1ecf0f4f4b53e95ba7f0bb91a70cd5e8ade537c8
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 17:39:17 2019 -0800
+
+    Swapped hudCells for gridCells in the hud setup logic.
+
+commit 32c9907fd19162d4c6d3ab96f6d887ab7018d47d
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 17:37:38 2019 -0800
+
+    Added method that fills hud with NullGridCells.
+
+commit 3c068f774f297bc2906864873c1d3828ad7164a3
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 17:36:44 2019 -0800
+
+    created class that doesn't draw itself.
+
+commit 474ca862fbd9d407b9d9c2e0640d8df5976e4a41
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 16:45:34 2019 -0800
+
+    Made touchGrid give logid priority to any cells in the touch location to hudCells.
+
+commit 89bcdfb660b3beae461c5722722de6aaaa23aa5e
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 16:32:49 2019 -0800
+
+    Tried setting up hudCells like gridCells, and it just gave a blank hud.
+
+commit 4c638cf5b91464fccbf7fd99688f642b18df3395
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 16:22:28 2019 -0800
+
+    Removed paramenters after I realized that they weren't involved in the selection logic.
+
+commit 4589fe19fd2b422c8bea0486934f72307c266bb1
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 16:04:28 2019 -0800
+
+    Added parameter to doLogicNodeEvent to allow it to use either hud or grid.
+
+commit 767504fdc9f76cff652247c566a66f0ffa69f959
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 16:03:01 2019 -0800
+
+    Added parameter to doEmptyCellEvent to allow it to use either hud or grid.
+
+commit ad1bd1e1013e4b182f93e25537ea13293909efa6
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 16:01:53 2019 -0800
+
+    Added parameter to CllClickEvent to allow it to use either hud or grid.
+
+commit 1af91ade30106e55d1dc760a36ac4c0b7ee92ec8
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 16:00:09 2019 -0800
+
+    Added parameter to onClick to allow it to take either hud or grid.
+
+commit c4680908a5401333dd4a37224f39dac9b8d1cbe6
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 15:54:34 2019 -0800
+
+    Added parameter to distanceToClosestFrom to allow it to take either hud or grid.
+
+commit 5a94bf8f5f9e5714ac89be59dc4cc7820848fe12
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 15:51:41 2019 -0800
+
+    Removed getHudTouchPosition. It didn't do anything different from getGridTouchPosition.
+
+commit 9dd0ceab85c389ba11d565c138c17cecaf0df041
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 15:46:58 2019 -0800
+
+    Moved blocksize calculaition to reserveUISpace for better readability.
+
+commit f8cfdb184baa1eb7b9859c40c94a3ed423616aa9
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 15:44:37 2019 -0800
+
+    Added a variable to reserve space for the ui touch logic.
+
+commit fa7d53f6e3bf491babba7e8c6380fb93dadea63c
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 15:43:52 2019 -0800
+
+    Added 3 more saves to ui.
+
+commit 665d3f20e06d9f723dba8a702d46d7f5d86940e9
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 15:34:55 2019 -0800
+
+    Added parentheses to remove math ambiguity.
+
+commit 234f4126f450d60423173debdac24ec2a49b57de
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Dec 8 15:31:25 2019 -0800
+
+    Add x and y offset vars to keep track of grids offset in touch logic
+
+commit af73ca6181a779435d3b76cf5cf43fdc74c412cb
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Sun Dec 8 06:22:11 2019 -0800
+
+    Created one more bitmap and canvas in LogicSimulator.java to test, doesn't affect the code in any way.
+
+commit 9f51101c5229a6a8bf10c5c9ecb784ddc788883f
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Sun Dec 8 04:24:25 2019 -0800
+
+    Implemetation of BackgroundGraphicsComponent complete. May make changes later.
+
+commit a2e3bcd98414d0fc14c123e593f22397225bb9f3
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Sun Dec 8 02:02:46 2019 -0800
+
+    implemented 'BackgroungMovementComponent', joins two backgrounds.
+
+commit a06e37d29991f0135304968beb4cbd94b4d15a40
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Sun Dec 8 01:05:54 2019 -0800
+
+    Implemented 'BackgroundGraphicsComponent'.
+
+commit 6e3842de32147139dd7fe23ab1551e86850a7b75
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Sat Dec 7 23:34:56 2019 -0800
+
+    Implemented methods in StandardGraphicsComponent from its interface.
+
+commit 34a3598ded7cd43a6d5a498518a76ac5e6427e4c
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Sat Dec 7 23:05:59 2019 -0800
+
+    Class added 'StandardGraphicsComponent' & made changes to 'GraphicsComponent'.
+
+commit cc471ddd07bd7ff895b658d59076fdfaafcaa72a
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 14:41:11 2019 -0800
+
+    Added abract constaint to hud design.
+
+commit 0221125698b1a8851d938ed0ed851d4e1bbee1d3
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 14:06:43 2019 -0800
+
+    Commented the touchGrid logic for clearity.
+
+commit 02a2b0534e3bcdf306640d45a4f3a34407df0b3f
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 13:58:48 2019 -0800
+
+    Created the base logic for seperating the hud's touch events.
+
+commit a208f201b84f57e1f5d3c861fa372856b317da38
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 13:47:05 2019 -0800
+
+    Put comments in for removing the hud from the grid later.
+
+commit c9bc058744a46640dd98ddd17a1003755d1cdfd6
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 13:37:24 2019 -0800
+
+    Removed gridSetUp function. It was no longer needed.
+
+commit 4d1e5ec438eba83caf0e2f5c88471f9310b04132
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 13:34:47 2019 -0800
+
+    Made the grid 10 by 10.
+
+commit fdbca1a7432b5241e5eae5e5a0e7105434b0acc4
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 13:22:37 2019 -0800
+
+    Putting hud back on grid for testing.
+
+commit 04df0bdec78146049867988ed6555d576e8fe002
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 13:13:46 2019 -0800
+
+    Refactoring getGridPosition to add hud touch points.
+
+commit e4107a82531ef72017fe276bce6b3490470da7e0
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 13:02:16 2019 -0800
+
+    Removed 2nd setUpHud.
+
+commit 9eb1ee5308aff0089f152c6e3a20ed5845cf47d8
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Wed Dec 4 07:33:00 2019 -0800
+
+    commented out wiremath for test run
+
+commit 81b73467991efa872a720317b79e3288b14b217c
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Wed Dec 4 07:24:14 2019 -0800
+
+    wiremath was crashing the app so I uncommented the calls from main
+
+commit 4a2b627b4953b6f552cd5cce7e4a077e52152841
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Wed Dec 4 07:18:41 2019 -0800
+
+    syntax error
+
+commit c2c34f7da1eae8d53bb3490aafc603cc5aca9508
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Wed Dec 4 07:17:43 2019 -0800
+
+    removed motionEvent function call from main activity and move it to WireMath.java
+
+commit c41926729676853fa9ae350bd5bb058eb03d8fab
+Merge: 3a0ef86 54ddef9
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Wed Dec 4 07:14:55 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 3a0ef86c22907dcdc110ac03d786c050503212c4
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Wed Dec 4 07:14:52 2019 -0800
+
+    fixed motionEvent error in WireMath
+
+commit 54ddef980a4c0d281620dc59b308ec496121159f
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 07:07:27 2019 -0800
+
+    Added setter and getter methods in Transform.
+
+commit 485b0cb1ec0ebc1667f7bb98f203c6517489c8dc
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 07:02:15 2019 -0800
+
+    Added the constructor along with some fields in Transform.
+
+commit 640fcb7c7c6dbd93e36dd4227cb4d9908b9e4e0b
+Merge: ef2c405 1d245e2
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 06:57:54 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit ef2c405425f21c2e9c56858d687c307b71574ed8
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 06:57:04 2019 -0800
+
+    Added instance variables in Transform.java for scrolling background.
+
+commit 1d245e2b0e3854ff4cadcac53f087b6b7c84fb8d
+Merge: 1536c9e 9c9495c
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 06:23:00 2019 -0800
+
+    Merge https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 1536c9ea0ff97482bfc76d57bcdad4b0b8bab3a4
+Merge: 29e48f1 48f254a
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 06:20:28 2019 -0800
+
+    Merge https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+    This merge will bring in the hud on a different layer from the grid,
+    which will allow up to see the hud even if the grid moves.
+
+commit 29e48f1c87434b73a305f9913384e52431478edf
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 06:20:21 2019 -0800
+
+    Clean up the Hud draw and fixed over draw bug.
+
+commit 9c9495c1ddcc1652ba52a1bc1b6a5cf1c71d944e
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 06:20:02 2019 -0800
+
+    Class 'BackgroundMovementComponent' created, implements MovementComponent. This class will connect/join the different grids/backgrounds to be able to scroll.
+
+commit 1641e4963f42af44db1ba2624152ff1baf4fb1dc
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 06:19:30 2019 -0800
+
+    Added comment to setUpHud call in grid init function to prevent it from being moved aboce reset().
+
+commit ee31b465870a62f85098d81cd50f79b2a5462e48
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 06:18:17 2019 -0800
+
+    Moved hudCells vector initialiaztion to setUpHud.
+
+commit 53a46cb69aca6230949159d66c7577f6442a28d7
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 06:17:36 2019 -0800
+
+    Moved setUpHud to grid init function, so the hund only has to be setup once.
+
+commit ba9a873248ffa60b98a6f8126f7f2005a950c2a0
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 06:16:42 2019 -0800
+
+    Made setUpGrid add to hudCells vector.
+
+commit 48f254a13b8de136b20a130bd9413fe4bc6a2551
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 06:16:25 2019 -0800
+
+    Interface 'MovementComponent' added.
+
+commit 9a4be0743b11a8e0798aecb9f56266c5beb3aad8
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 06:12:33 2019 -0800
+
+    Class created 'BackgroundGraphicsComponent', implements GraphicsComponent.
+
+commit 51866764c63ee8343528031757a8e7043de537ca
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 06:09:29 2019 -0800
+
+    Tested the block size of the hudCells vector. Couldn't determine the over draw bug.
+
+commit 7f48b4da6c19c96b6c7e7c0c9cc93e52530d0d51
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 06:06:46 2019 -0800
+
+    Added a new class 'Transform'. It will handle the size, position, and orientation of the scrollable grid.
+
+commit 602f2a9e853ef6d390a1ca45591dfaf9d1b8bb51
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 05:56:12 2019 -0800
+
+    Fixed drawHud.
+
+commit 054eec1598a7257410def54d26bb856f47190afc
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 05:54:56 2019 -0800
+
+    Fixed setUpHud2, but still it's not drawing.
+
+commit 395f7b07f76d36eca44020555c85c1f4ad748021
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 05:53:29 2019 -0800
+
+    Added an interface 'GraphicsComponent'. Will be used to initialize and draw different screens for the grid. Hence the scrolling feature.
+
+commit 0d41e9e776c3b43f8f38a68e68d39bccc834b237
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 05:48:02 2019 -0800
+
+    Made changes to ObjectSpecific and Background class.
+
+commit 039d0d7b059adad222fc8889110b76e0e9f5811e
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 05:46:05 2019 -0800
+
+    Added a second setUpHud to test the why the other vector wont add cells.
+
+commit ccc2ecf4971e0dcdb655d74a86564734c3e7172b
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 05:24:05 2019 -0800
+
+    Removed hud set up from all but reset
+
+commit 83b642ed349ee05e3cfdc23da3408f07fb5b7c4a
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 05:23:14 2019 -0800
+
+    Made ObjectSpecific an abstract class. Will e extended in BackgroundAddition class.
+
+commit e2dc2b04441bc66b386d4dba0031a35d6690e490
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 05:22:14 2019 -0800
+
+    Renamed old drawHud to setUpHud.
+
+commit cefad804cf58960fe296e77e3af6db4b27074ac5
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 05:13:53 2019 -0800
+
+    Trying to sperate grid and hud.
+
+commit 7c03c98ce4e9a254916951ee8398b857cd1e5679
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 05:04:17 2019 -0800
+
+    Created a new class 'BackgroundAddition' for creating additional backgrounds. Will be used in the scrolling feature.
+
+commit 7609635518e75c2387ae9071117b254075995471
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 05:01:30 2019 -0800
+
+    Added getter methods to ObjectSpecific.
+
+commit 19f3fbfe00fa607dc76547c718c9bc02da2f9584
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 04:57:32 2019 -0800
+
+    Moved draw hud call to draw grid.
+
+commit b3adebba36de4b4cd79a1db9e8e396ba6956421d
+Merge: ca0d9aa 0097bbc
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 04:56:49 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit ca0d9aab5db38029668efd9ef56471029a249eb8
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 04:55:33 2019 -0800
+
+    Created the instance variables and added a constructor for 'ObjectSpecific' class.
+
+commit 0097bbc4ff04cc296a69b2738d4e3070948eef65
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 04:52:02 2019 -0800
+
+    Fix error were wire would highlight basse on the inputs state instead of the sources state.
+
+commit d287672cc3dc630cde90ce67dcca337e009b8775
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 04:49:54 2019 -0800
+
+    Added color change for on state wire
+
+commit 562ddc9df0d065efae98ccb4ad4a0c134eab7950
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Wed Dec 4 04:42:21 2019 -0800
+
+    Found and commented out broken code.
+
+commit 6f8563f33d899e2312319c5a45a790c26ce333b6
+Merge: dfb1a4c a50c791
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 04:36:33 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit dfb1a4c3112eaa99ad7450f2f18137a3638a9593
+Author: MehakdeepSingh07 <54616268+MehakdeepSingh07@users.noreply.github.com>
+Date:   Wed Dec 4 04:35:13 2019 -0800
+
+    Created a new class 'ObjectSpecific'. Will be used for Scrolling.
+
+commit a50c791985064110b56953dddd818196d41cdf47
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Mon Dec 2 02:03:53 2019 -0800
+
+    Wrong object was being used in main to get touch data
+
+commit 42eb68dc02247f08930d6ad2f16d2cc59ef7a5d3
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Sun Dec 1 18:40:55 2019 -0800
+
+    removed WireMath code from Wire.java and pushing data from WireMath.java to Wire.java
+
+commit e986aa0ebbea4e429b95e61eae3b68c3dd7c0395
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Sun Dec 1 18:36:14 2019 -0800
+
+    made new WireMath class for the wire logic
+
+commit 5e5359a22c03597c73480d7bd54f84d809bf8e47
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Sun Dec 1 18:33:31 2019 -0800
+
+    fixed referencing error in midpoint where midpoint formula was not receiving X and Y coordinate data
+
+commit b22900c727eb0ec0dce8cc074de02e5227f745fe
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Sun Dec 1 18:20:51 2019 -0800
+
+    uncommented main action_up/down/move
+
+commit 2b5985d7cf9cf83cb95c3db7cf30f27fc421fc08
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 24 14:47:54 2019 -0800
+
+    Made copy circuit function account for switched as well as nulls when looking for leafs/inputs.
+
+commit 25a1a1bf197c71944e918420facaa5c2b0be27d4
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 24 14:44:07 2019 -0800
+
+     I believe I have finished the logic for copying a circuit using any node on the circuit.
+
+commit 35eba74778ad9959dd48cb991b412a3cec5e2952
+Merge: 97bb64e 4e82766
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 24 05:49:57 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 97bb64e6a7d54b1913730994520d62a04240d80d
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 24 05:47:52 2019 -0800
+
+    Moved all the code from horizontal_layout to activity_main. horizontal_layout still exists.
+
+commit 4e8276606dcf77143b104ada916a1923d5561992
+Merge: 65969a5 69c9ec4
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 24 05:46:39 2019 -0800
+
+    resolved conflict in .idea/misc.xml
+
+commit 69c9ec425659be7378e7cf3446d1358e700a9978
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 24 05:29:38 2019 -0800
+
+    More changes to the horizontal_layout. Incomplete. Not in use yet.
+
+commit 65969a53617cbe7401a7f72e81db7f367e426dbe
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 24 05:27:54 2019 -0800
+
+    Got basic copy circuit logic done in NestedCircuitLogic.
+
+commit afbfb6f07a3c3db8a86487954a6725351650af86
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 24 05:03:30 2019 -0800
+
+    Made some changes to horizontal_layout.xml. Trying a new grid/UI.
+
+commit 39bdd588dbdc703d5d71ccb36dfab99707437b18
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 24 04:37:14 2019 -0800
+
+    Created & Wrote a horizontal_layout xml file.
+
+commit ecfdb1d0d4348cf19f614facec31eecacfd30a7f
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 24 01:40:36 2019 -0800
+
+    changed the get inputs functions to functions that returned LogicNode instead of using Vectors
+
+commit 1e32c3e527e2e3eb82564ec11f5bd50efd8debd6
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 24 00:18:07 2019 -0800
+
+    added temporary saving and loading functionality to Nested CircuitLogic.
+
+commit 9e7501b5ed7d2684dc1c5ab004e25ef5f19e2187
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 24 00:07:32 2019 -0800
+
+    Removed SetContext function from LogicSimulator.java
+
+commit 4dd9f38c92a67dd42936d90270c6ef34da6cc29e
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 24 00:05:59 2019 -0800
+
+    Removed logisimContext interface
+
+commit 4352899dedaac46b0942928a19cb9365ce219c8b
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 24 00:03:51 2019 -0800
+
+    Removed use of AGCSaves.load, and set a comment saying the code does not work correctly, yet.
+
+commit 3de11fdc4cd0259c97802186b002b6f46a40428b
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 23:23:26 2019 -0800
+
+    Added context requirement back to grid initialization to remove that responsibility from the MainActivity.
+
+commit 9b898a84d594ac99de2aca2fd35cd3e4cfdf5176
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 23:16:42 2019 -0800
+
+    Removed context interface from LogicSimulator.java, and change the init function.
+
+commit 075357d8a2ebfb94852f379774e1870e1fdeaa34
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 22:55:52 2019 -0800
+
+    Change the grid's save function to use the saves object interface, and forced instances of the grid the be given a context on instantiation.
+
+commit 387fdc1ad3e625fc77ab457f78de86972086cc25
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 22:44:05 2019 -0800
+
+    Added saves object to grid, because I realized that the grid is most likely the best place to manage the grids save.
+
+commit 1331d77af08a61d7be5bc4cfefc1022e3e5667b0
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 22:34:26 2019 -0800
+
+    Added a comment about the save manager and about the context interface.
+
+commit e93f4f8f6d9a228f7eafa3af6c40c3e9fd7bc8bc
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 22:30:10 2019 -0800
+
+    Added a Saves object to LogigSimlulator to manage saving.
+
+commit b4a9992686d373ca950b3acaaba918e3590c135f
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 22:20:38 2019 -0800
+
+    added temparay Manifest.xml, since I do not have the new one that was being worked up.
+
+commit 010c60dd4fe812a56c7e24ec30ca2881fe54fbe6
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 22:07:52 2019 -0800
+
+    Finished the basic logic of the Cells saving system that I added in the Context interface commit
+
+commit c418824b51a1a6f283ccf68ad0affdbe8c8fa388
+Merge: 0ba6499 8801720
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 21:42:27 2019 -0800
+
+    Merge https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 0ba649910a6226dcc9ddaa87c79de8f7bf71d3f4
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 21:42:03 2019 -0800
+
+    addes a context interface to LogicSimulator.java
+
+commit 0511bad6fb9a82277e8b9ba6015a29720ed6b1e6
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 21:38:25 2019 -0800
+
+    created a class to hold context, so I could ensure that the classes using the context wont break if the method of getting the context changes.
+
+commit c2e5b20542d7067f7a7ac45f9c957bc924c5194c
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 23 21:35:37 2019 -0800
+
+    created a class to hold context, so I could ensure that the classes using the context wont break if the method of getting the context changes.
+
+commit 88017200dcabe799c36a222145228ab96b80e8a8
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Sat Nov 23 21:33:56 2019 -0800
+
+    added hypotenuse calculations for X, Y, and XY
+
+commit 835e35027d2c661a8cdc1baf94c82312b7c6cee8
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Sat Nov 23 21:28:33 2019 -0800
+
+    fixed midpoint calculation in wire.java
+
+commit 8fad74c58a7e0450f7364ccea4b9d0c2496d0566
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Wed Nov 20 03:57:33 2019 -0800
+
+    Disregard last commit, had errors. This one's ok.
+
+commit 2b61b9103b42f90ba6b91fad0440023c8c1b9198
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Wed Nov 20 03:36:37 2019 -0800
+
+    Pushed a copy of our project 'LogicSimulatorME'.
+
+commit 150a0852a063cc7af5ecb7ef5008bc26de83563b
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Wed Nov 20 02:07:28 2019 -0800
+
+    Added recyclerview and cardview in dependencies
+
+commit 6e0db03c0c230f229c464717a99c003cf485f065
+Author: Joshua Olson <nguyent.joshua@gmail.com>
+Date:   Wed Nov 20 00:10:43 2019 -0800
+
+    commented out wire class because it was crashing the app
+
+commit 32bd633fd054463600a33e03e8d8083d52ff18ec
+Author: Joshua Olson <nguyent.joshua@gmail.com>
+Date:   Wed Nov 20 00:07:25 2019 -0800
+
+    added comments to wire class
+
+commit 17c318123aa9dae5db3eb072e186ee3cd255d403
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Tue Nov 19 22:46:55 2019 -0800
+
+    added hypotenuse and completed midpoint for Wire class
+
+commit 32f4168c6f4c80e9238af3e2f72a5a6168aa0545
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Tue Nov 19 22:20:38 2019 -0800
+
+    added moveEventX and moveEventY to wire class and completed fetching and rounding for X and Y coordinates for midpoint
+
+commit b522aaaf124df636bf40b21fc28a41603ba3176c
+Author: Joshua T. Olson <joshuaolson@csus.edu>
+Date:   Tue Nov 19 22:07:05 2019 -0800
+
+    added touch event ACTION_UP and ACTION_DOWN along with midpoint formula implementation
+
+commit 8494f40cc1e07259d310a501588426a1b50bf14d
+Author: Joshua Olson <nguyent.joshua@gmail.com>
+Date:   Sun Nov 17 16:12:51 2019 -0800
+
+    changed line class to wire class
+
+commit 2067077a5483c4b84ae89ba418908e9cadc1d09e
+Merge: 3869fbf 65619cd
+Author: Joshua Olson <nguyent.joshua@gmail.com>
+Date:   Sun Nov 17 16:00:49 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 3869fbf8d155ded36fe3bccc1a481e173cee3c01
+Author: Joshua Olson <nguyent.joshua@gmail.com>
+Date:   Sun Nov 17 16:00:43 2019 -0800
+
+    Added line class Line.java
+
+commit 65619cd9848b14cb9e004d059b84a1b28d5260d4
+Author: SAK_NAM\tntma_000 <tntmak1@gmail.com>
+Date:   Sun Nov 17 15:58:53 2019 -0800
+
+    updating MD
+
+commit 103327f7cb5fe25d55d29209c935eaa1f936bf90
+Author: Joshua Olson <nguyent.joshua@gmail.com>
+Date:   Sun Nov 17 15:27:26 2019 -0800
+
+    removed repetitive code for stroke width to for grid redraw
+
+commit 7031ebbe63472a215c0caae4d03c6d5caa01e04b
+Author: SAK_NAM\tntma_000 <tntmak1@gmail.com>
+Date:   Sun Nov 17 15:02:05 2019 -0800
+
+    did a fix for clickerinterface
+
+commit f368c348a20a61f93d8f1942ea6131dd5a5c43f7
+Author: SAK_NAM\tntma_000 <tntmak1@gmail.com>
+Date:   Sun Nov 17 14:45:48 2019 -0800
+
+    making a ClickInterface
+
+commit b09049633bd57f30d61f9b325cd57ebb2379689f
+Merge: 63c37f4 7bc7930
+Author: SAK_NAM\tntma_000 <tntmak1@gmail.com>
+Date:   Sun Nov 17 14:41:07 2019 -0800
+
+    Merge branch 'master' into Makenna_buttons
+    
+    trying to get my branch up to date
+
+commit 7bc793090a1ba7918640642b37bdddfffd5c9018
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 17 11:47:11 2019 -0800
+
+    Fixed compiling error from NestedCircuitDriver
+
+commit 4d7220d32bac833fc52755e094580f99b5cb857d
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 17 11:43:23 2019 -0800
+
+    created a driver for NestedCircuit testing. It only has a basic circuit in it.
+
+commit c182e053a51a99f58e9ad4166774b518904ce770
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 17 09:20:15 2019 -0800
+
+    Added general comments to Grid class. Updated design of Nested circuits in it's classes and the README
+
+commit f7d1210a62a218731941d35f43d6e351554e3e78
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 17 07:34:29 2019 -0800
+
+    Added getInputs method to LogicNode class using a Vector to recieve them.
+
+commit c6f159a5793a88dcff1c9f8611a55d71c9e4311b
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 17 07:30:29 2019 -0800
+
+    added the base for NestedCircuit.java and NestedCircuitLogic.java
+
+commit e19aae0c8ccc2e766943336f41e97450b3ee55cc
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 16 20:57:04 2019 -0800
+
+    Added the NestedGate design to README.md
+
+commit aaf0b2e2cdfa2bcd16b5e9d232efb78059c739a1
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sat Nov 16 20:51:46 2019 -0800
+
+     remove 2nd version in the README.md
+
+commit 617d4ddea885d4f9775326d9f893760687c10f8b
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Mon Nov 11 14:43:54 2019 -0800
+
+    Added AbstractGridCell.java, Grid.java, LogicIcon.java, LogicNode.java, and LogicSimulator. java to the repo
+
+commit 3ae0bb11d4999122d1dc40e2edac70cc836d446a
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Mon Nov 11 14:37:29 2019 -0800
+
+    Was saving files in the wrong directory. Moved the file from the previous commits into the git directory.
+
+commit 63c37f439c0051fff32fdb04f7e598166f7b7c57
+Author: SAK_NAM\tntma_000 <tntmak1@gmail.com>
+Date:   Mon Nov 11 14:36:12 2019 -0800
+
+    adding xml code
+
+commit 8d569cf1834b3a439447e5b6c5c529d8510e3bea
+Author: SAK_NAM\tntma_000 <tntmak1@gmail.com>
+Date:   Sun Nov 10 15:59:46 2019 -0800
+
+    put in the XML code for the buttons but they aren't visiable as they are under the overlay
+
+commit e70c6b4ce010a8f3e00bcf215abca4262bc090d6
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 3 17:17:21 2019 -0800
+
+    2nd version of .md file included in the end.2nd version of .md file
+    included in the end.
+
+commit 1149246302561853790e9016f576b31c8eeb57f2
+Merge: 6cdfdc0 6543031
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 3 17:14:17 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 6cdfdc0f01465b7291abc507b09cefa5f2555e4e
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 3 17:08:35 2019 -0800
+
+    2nd version of the .md file in the end.
+
+commit 654303128a09609eab58a0582069e07d7181c0cc
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 3 17:05:35 2019 -0800
+
+    Moved Team Members in README.md to the top under Team Name.
+
+commit 08d4bc266ca15b66eef362dd7c5d08b176eb4c1a
+Merge: 5f2a7ae 9724b75
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 3 17:05:13 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 9724b7560b851791c025d287df80de5a01c59c73
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 3 17:02:36 2019 -0800
+
+    Made New Features tag bigger and easier to notice.
+
+commit 5f2a7ae7b536052af0b391337d9e7ba8fc73fce6
+Merge: 3ddf4d9 9b35c51
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 3 17:01:42 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 9b35c510ad60ecac16f4d301d7d7c13f53397268
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 3 17:01:15 2019 -0800
+
+    Reformatted Team Name.
+
+commit 2f40153d326c423b5a9877d8cb1397c8ff07bc2d
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 3 17:00:06 2019 -0800
+
+    Removed MISSION heading and reformatted VISION statement.
+
+commit 3ddf4d9b9374f716f21584720b013d9c4a1c7a1d
+Merge: 32054f4 53f3988
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 3 16:57:45 2019 -0800
+
+    Merge branch 'master' of https://github.com/CSUS-CSC-131-Fall-2019/LogisimME
+
+commit 2dd74e3e637af95db9115d267149f776e4e8e118
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 3 16:56:51 2019 -0800
+
+    Adding README.md back. The merging error was resolved.
+
+commit 32054f4fbf54c0333886dcb29f159680ede6b090
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 3 16:54:56 2019 -0800
+
+    Changes to the .md file before 1st submission.
+
+commit 53f398803e0239be3a4fd44c06f39c1a482f6184
+Merge: 2238d97 f80452b
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 3 16:54:26 2019 -0800
+
+    Deleted ReadMe.md to try to fix merging issue. Will add this back if it is trully gone
+
+commit 2238d9756f99c6bd04fda43328119e9ac3c2341b
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Sun Nov 3 16:47:53 2019 -0800
+
+    Finished converting the design docx file to .md up to todo list
+
+commit f80452bc2fb243586637ce22bda613ff55ea7a00
+Author: Joshua Olson <nguyent.joshua@gmail.com>
+Date:   Sun Nov 3 16:21:01 2019 -0800
+
+    * Will hold icons.
+    * grid will start out populated with empty grid cells and be populated by the user by using the Hud controls.
+    * Grid will be able to hold icons of different types that each trigger different events.
+    * Will hold the Hud temporarily until Hud layer created.
+    * All logic icons should be same size fit on the grid.
+    * Will auto track themselves.
+    * Draw themselves at their locations.
+    * Click a logic icon on the Hud, then drag and drop the icon to the grid.
+    * When selecting new, an icon's original location will either display a greyed-out image of the icon or be empty.
+    * After selecting an icon by tapping, user can tap locations on the grid to place new icon.
+    * If using touch and drag, an icon will be placed on the grid after being released over the grid. Icon will be deselected and returned to hud. If icon isn't released over hud, will be deselected and returned without adding icon to the grid.
+    * Will be handled after each click to simplify design, but allow user to understand and control the actions of the grid.
+    
+    * Click this icon to select it. Tap desired logic node to be deleted.
+    * can only delete user placed nodes.
+    * Deleting icon will delete all input wires connected to that icon.
+    
+    * Using a "connection mode", you can tap on an icon or a wire to create new wires to connect sources to inputs.
+    
+    * Tap a clear screen icon to remove all user placed icons and wires from the grid
+    * Confirmation prompt (currently double tap).
+    
+    * The grids state will be automatically saved and reloaded.
+    
+    * Click to select
+    * Set selected to logic icon
+    * Allowed to choose the type of cell dropped on empty cell location on nect click.
+    * Click to select.
+    * Set selected to delete.
+    
+    * Wire Source:
+    click to select, then click logic node to select source.
+    
+    * On clicked
+    * If selected: Delete
+            * Change grid cell to empty Cell.
+            * Remove node input and output wires from System.
+    * If selected: Wire
+            * Remove all wires attached to node.
+    * If selected: Logic node
+            * Do nothing.
+    * Else if: Nothing selected
+            * Defauly click action(toggle state).
+    * Turn logic nods into tree evaluator
+            * Each node updates states on screen tap to prevent back track.
+            * Node only acceps other nodes as input(prevent pointing to other grid objects).
+    
+    * If selected: Logic Icon
+            * Set cell to logic node of icon
+    * Else
+            * Do nothing
+    
+    * Reset all caells to empty, delete all wires, and reset selected to null.
+    
+    * If Selected, Create Save
+            * Create save state of current grid.
+    * Else
+            * Load selected grid save state.
+
+commit f00fbaf7f87ca9f1f05cb7e75b338a16b9b7580b
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 3 14:25:15 2019 -0800
+
+    Made some changes to the .md file.
+
+commit 4251a1e8f1ba2f3aef7f3f388fd85fb506162c1c
+Author: Mehakdeep Singh <mehakrangi99@gmail.com>
+Date:   Sun Nov 3 14:02:18 2019 -0800
+
+    Started the .md file. Vision & team names.
+
+commit 7e906c7b70c3c28f6eb06a1442cb13796e7bb9db
+Author: Cody Wuco <codywuco@yahoo.com>
+Date:   Fri Nov 1 16:10:08 2019 -0700
+
+    Starting point for group project. Cody Wuco's last solo submission.
+
+commit 0aff3ec62dab334888ff86a56ce92340d71772e3
+Author: Joshua Olson <nguyent.joshua@gmail.com>
+Date:   Mon Oct 28 09:49:07 2019 -0700
+
+    git init by josh
+
+commit d8ff6415996c8446785d4b5a98bb5116b92ae57b
+Author: Daryl Posnett <dp@tcfacs.org>
+Date:   Mon Oct 28 04:56:47 2019 -0700
+
+    Initial commit
